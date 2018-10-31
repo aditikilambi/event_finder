@@ -5,3 +5,7 @@
 	height: 30%;
 }
 
+/*added to make page content in line with header*/
+#pgContent {
+	padding-left: 10%;
+}
