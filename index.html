@@ -9,6 +9,7 @@
     	<link href="css/bootstrap.min.css" rel="stylesheet">
     	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="css/pageHeader.css" rel="stylesheet">
+      <link href="css/tabs.css" rel="stylesheet">
 
   </head>
 
@@ -20,7 +21,28 @@
   		<div class = 'jumbotron' id='pageHeader'>
   			<h1>EventFinder</h1>
   			<h3>Welcome back, Organization</h3>
-  		</div>
+      </div>
+
+      <!--  Making the My events, Upcoming, and create event tabs  -->
+
+      <div class="tab">
+          <button class="tablinks" onclick="eventTabs(event, 'My Events')">My Events</button>
+          <button class="tablinks" onclick="eventTabs(event, 'Upcoming Events)">Upcoming Events</button>
+          <button class="tablinks" onclick="eventTabs(event, 'Create Event')">Create Event</button>
+        </div>
+        
+      <div id = "MyEvents" class = "tabcontent">
+        <h3> My Events</h3>
+      </div>
+
+      <div id = "Upcoming" class = "tabcontent">
+        <h3> Upcoming Events</h3>
+      </div>
+      
+      <div id = "CreateEvents" class = "tabcontent">
+        <h3>Create Event</h3> 
+      </div>
+
 
       <a href='./createEvent.html'>Create Event</a>
       
