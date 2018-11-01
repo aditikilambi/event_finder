@@ -1,24 +1,50 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Upcoming Events</title>
-    <!--    Importing Stylesheets    -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/pageHeader.css" rel="stylesheet">
+      <meta charset="utf-8">
+      <title>Upcoming Events</title>
+
+      <!--    Importing Stylesheets    -->
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+      <link href="css/tabs.css" rel="stylesheet">
+      <link href="css/pageHeader.css" rel="stylesheet">
   </head>
 
   <body>
-    <div class = 'jumbotron' id='pageHeader'>
-      <h1>EventFinder</h1>
-      <h3>Upcoming Events</h3>
-    </div>
+
+      <!--    Creating Page Header    -->
+
+      <div class = 'jumbotron' id='pageHeader'>
+        <div id = "openNav" onclick="openNav()">&lt;</div>
+        <h1>EventFinder</h1>
+        <h3>Upcoming Events</h3>
+      </div>
+
+      <!-- Creation of side nav bar -->
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)"  onclick="closeNav()">&times;</a>
+        <a>Search Bar, Currently a Placeholder</a>
+        <a>Organizations</a>
+        <a>Time</a>
+        <a>Tags</a>
+      </div>
+
+      
+      <!--  Making the My events, Upcoming, and create event tabs  -->
+
+      <div class="tab">
+          <div class="tablinks"><a href="./index.html"><button>My Events</button></a></div>
+          <div class="tablinks"><a href="./upcoming.html"><button>Upcoming Events</button></a></div>
+          <div  class="tablinks"><a href="./createEvent.html"><button>Create Event</button></a></div>
+      </div>
+
 
     <div id="pgContent">
-      <a href="./index.html">Home</a>
+      
       <br>
-      <a href='./createEvent.html'>Create Event</a>
       <br>
       <br>
 
@@ -73,5 +99,7 @@
     <!--    Importing Bootstrap Scripts    -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/tabs.js"></script>
+
   </body>
 </html>

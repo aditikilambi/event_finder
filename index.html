@@ -8,56 +8,98 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<link href="css/bootstrap.min.css" rel="stylesheet">
     	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-      <link href="css/pageHeader.css" rel="stylesheet">
       <link href="css/tabs.css" rel="stylesheet">
-
+      <link href="css/pageHeader.css" rel="stylesheet">
   </head>
 
   <body>
 
-
       <!--    Creating Page Header    -->
 
   		<div class = 'jumbotron' id='pageHeader'>
+        <div id = "openNav" onclick="openNav()">&lt;</div>
   			<h1>EventFinder</h1>
-        <h3>Welcome back, Organization</h3>
+        <h3>Welcome back, Latin Club</h3>
       </div>
-
 
       <!-- Creation of side nav bar -->
 
       <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Search</a>
-        <a href="#">Organizations</a>
-        <a href="#">Time</a>
-        <a href="#">Tags</a>
+        <a href="javascript:void(0)"  onclick="closeNav()">&times;</a>
+        <a>Search Bar, Currently a Placeholder</a>
+        <a>Organizations</a>
+        <a>Time</a>
+        <a>Tags</a>
       </div>
-      <div id = "openNav" onclick="openNav()">&#9776; open </div>
 
       
       <!--  Making the My events, Upcoming, and create event tabs  -->
 
       <div class="tab">
-          <button class="tablinks" onclick="eventTabs(event, 'My Events')">My Events</button>
-          <button class="tablinks" onclick="eventTabs(event, 'Upcoming Events)"><a href="./upcoming.html">Upcoming Events</a></button>
-          <button class="tablinks" onclick="eventTabs(event, 'Create Event')">Create Event</button>
+          <div class="tablinks"><a href="./index.html"><button>My Events</button></a></div>
+          <div class="tablinks"><a href="./upcoming.html"><button>Upcoming Events</button></a></div>
+          <div  class="tablinks"><a href="./createEvent.html"><button>Create Event</button></a></div>
+      </div>
+
+
+      <!-- Placeholder Content --->
+
+
+      <div id="pgContent">
+        
+        <br>
+        <br>
+        <br>
+
+        <div style="border:15px solid yellow;padding-left:25px;margin-right:10%">
+          <h3>Oct 30th</h3>
+          <h4><b>Fall Recruitment</b></h4>
+          <p style="padding:15px;">
+            Organization: Latin Club
+            <br>
+            <br>
+            Time: 4:30PM - 7:30PM
+            <br>
+            <br>
+            Location: PC Ballroom
+            <br>
+            <br>
+            Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et...
+            <p style="text-align:right;padding-right:15px;">
+              <a href="./seemore.html">see more</a>
+            </p>
+          </p>
         </div>
 
-      <div id = "MyEvents" class = "tabcontent">
-        <h3> My Events</h3>
+        <br>
+        <br>
+        <br>
+
+        <div style="border:15px solid yellow;padding-left:25px;margin-right:10%">
+          <h3>Oct 31st</h3>
+          <h4><b>Halloween Bash</b></h4>
+          <p style="padding:15px;">
+            Organization: Latin Club
+            <br>
+            <br>
+            Time: 9PM - 12AM
+            <br>
+            <br>
+            Location: Secret
+            <br>
+            <br>
+            Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et...
+            <p style="text-align:right;padding-right:15px;">
+              <a href="./seemore.html">see more (if you click me I will redirect to the Oct 30th see more page)</a>
+            </p>
+          </p>
+        </div>
+
+        <br>
+        <br>
+        <br>
       </div>
 
-      <div id = "Upcoming" class = "tabcontent">
-        <h3> Upcoming Events</h3>
-      </div>
-
-      <div id = "CreateEvents" class = "tabcontent">
-        <h3>Create Event</h3>
-      </div>
-
-
-      <a href='./createEvent.html'>Create Event</a>
 
       <!--    Importing Bootstrap Scripts    -->
 

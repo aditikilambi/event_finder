@@ -3,29 +3,78 @@
       <meta charset="utf-8">
       <title>Create Event</title>
 
-      <!--    Importing Stylesheets    -->    
+      <!--    Importing Stylesheets    -->
 
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<link href="css/bootstrap.min.css" rel="stylesheet">
-    	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+      <link href="css/tabs.css" rel="stylesheet">
       <link href="css/pageHeader.css" rel="stylesheet">
-
+      <link href="css/form.css" rel="stylesheet">
   </head>
 
   <body>
 
+      <!--    Creating Page Header    -->
 
-      <!--    Creating Page Header    -->    
+      <div class = 'jumbotron' id='pageHeader'>
+        <div id = "openNav" onclick="openNav()">&lt;</div>
+        <h1>EventFinder</h1>
+        <h3>Create Event</h3>
+      </div>
 
-  		<div class = 'jumbotron' id='pageHeader'>
-  			<h1>EventFinder</h1>
-  		</div>
+      <!-- Creation of side nav bar -->
 
-      <p>Welcome to Create Event Page</p>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)"  onclick="closeNav()">&times;</a>
+        <a>Search Bar, Currently a Placeholder</a>
+        <a>Organizations</a>
+        <a>Time</a>
+        <a>Tags</a>
+      </div>
 
-      <!--    Importing Bootstrap Scripts    -->    
+      
+      <!--  Making the My events, Upcoming, and create event tabs  -->
 
-	  	<script src="https://code.jquery.com/jquery.js"></script>
-		  <script src="js/bootstrap.min.js"></script>
+      <div class="tab">
+          <div class="tablinks"><a href="./index.html"><button>My Events</button></a></div>
+          <div class="tablinks"><a href="./upcoming.html"><button>Upcoming Events</button></a></div>
+          <div  class="tablinks"><a href="./createEvent.html"><button>Create Event</button></a></div>
+      </div>
+
+
+<!--     <div id='form'>This is where the form should be</div>
+ -->
+
+    <br>
+    <br>
+    <br>
+
+    <form action='./index.html'>
+      <p><input id="eventName" placeholder="Event Name"></p>
+      <p id='pic-upload'>Add an image<input type="file" name="eventPic"></p>
+      <p>Date: <input type="date" placeholder="MM/DD/YYYY">  Time: <input id="appt-time" type="time" name="appt-time"> </p>
+      <p><textarea id="description" placeholder="Give your event a catchy description"></textarea></p>
+      <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
+      <p><textarea id="tags" placeholder="Event Tags. Try #food #dance #networking"></textarea></p>
+      <p><input type="submit" value="Create Event"></p>
+    </form>
+
+    <!--    Importing Bootstrap Scripts    -->    
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/tabs.js"></script>
+
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+
+    <!-- Load our React component. -->
+    <script src="js/form.js"></script>
   </body>
 </html>
