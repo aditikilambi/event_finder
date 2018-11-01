@@ -1,0 +1,29 @@
+form {
+	padding-left: 20%;
+}
+
+#pic-upload {
+	float: right;
+	padding-right: 20%;
+}
+
+#eventName {
+	width: 50%;
+}
+
+#description {
+	width: 50%;
+	height: 100px;
+}
+
+#long-description {
+	width: 50%;
+	height: 200px;
+}
+
+#tags {
+	width: 50%;
+	height: 50px;
+}
+
+
