@@ -20,9 +20,22 @@
 
   		<div class = 'jumbotron' id='pageHeader'>
   			<h1>EventFinder</h1>
-  			<h3>Welcome back, Organization</h3>
+        <h3>Welcome back, Organization</h3>
       </div>
 
+
+      <!-- Creation of side nav bar -->
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Search</a>
+        <a href="#">Organizations</a>
+        <a href="#">Time</a>
+        <a href="#">Tags</a>
+      </div>
+      <div id = "openNav" onclick="openNav()">&#9776; open </div>
+
+      
       <!--  Making the My events, Upcoming, and create event tabs  -->
 
       <div class="tab">
@@ -49,6 +62,8 @@
       <!--    Importing Bootstrap Scripts    -->
 
 	  	<script src="https://code.jquery.com/jquery.js"></script>
-		  <script src="js/bootstrap.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/tabs.js"></script>
+      
   </body>
 </html>
