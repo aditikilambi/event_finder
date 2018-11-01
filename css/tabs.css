@@ -2,19 +2,22 @@ body {font-family: Arial;}
 
 /* Style the tab */
 .tab {
+    display: flex;
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    width: 100%;
+    align-content: center;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
+    display: flex;
     background-color: inherit;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 20px;
     transition: 0.3s;
     font-size: 17px;
 }
@@ -35,6 +38,11 @@ body {font-family: Arial;}
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+.tablinks {
+    width: 30%;
+    padding-left: 15%;
 }
 
 /* Nav bar css */
@@ -61,9 +69,9 @@ body {font-family: Arial;}
     transition: 0.3s;
 }
 
-.sidenav a:hover {
+/*.sidenav a:hover {
     color: #f1f1f1;
-}
+}*/
 
 .sidenav .closebtn {
     position: absolute;
@@ -71,6 +79,21 @@ body {font-family: Arial;}
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    float: right;
+}
+
+#openNav{
+    float: right;
+    font-weight: bold;
+    font-size: 50px;
+    padding-right: 10%;
+    opacity: 50%;
+
+}
+#opennav:hover{
+    color: blue;
+    opacity: 100:;
+    border-color: green;
 }
 
 #main {
