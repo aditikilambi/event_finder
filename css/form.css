@@ -1,5 +1,12 @@
 form {
 	padding-left: 20%;
+	background-color: #6E963B;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+form p {
+	color: white;
 }
 
 #pic-upload {
@@ -26,4 +33,6 @@ form {
 	height: 50px;
 }
 
-
+#submit {
+	color: black;
+}

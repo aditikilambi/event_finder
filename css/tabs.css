@@ -4,15 +4,14 @@ body {font-family: Arial;}
 .tab {
     display: flex;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
     width: 100%;
     align-content: center;
 }
 
+
 /* Style the buttons inside the tab */
 .tab button {
-    display: flex;
+    display: block;
     background-color: inherit;
     border: none;
     outline: none;
@@ -23,12 +22,12 @@ body {font-family: Arial;}
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
+.tab:hover {
+    opacity: 50%;
 }
 
 /* Create an active/current tablink class */
-.tab button.active {
+.tab:active {
     background-color: #ccc;
 }
 
@@ -41,10 +40,26 @@ body {font-family: Arial;}
 }
 
 .tablinks {
-    width: 30%;
-    padding-left: 15%;
+    width: 33%;
 }
 
+.tab #myEvents {
+    background-color: #00C6D7;
+}
+
+.tab #upcoming {
+    background-color: #FFCD00;
+}
+
+.tab #create {
+    background-color: #6E963B;
+}
+
+.tablinks p {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
 /* Nav bar css */
 
 .sidenav {

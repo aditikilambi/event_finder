@@ -37,31 +37,29 @@
       <!--  Making the My events, Upcoming, and create event tabs  -->
 
       <div class="tab">
-          <div class="tablinks"><a href="./index.html"><button>My Events</button></a></div>
-          <div class="tablinks"><a href="./upcoming.html"><button>Upcoming Events</button></a></div>
-          <div  class="tablinks"><a href="./createEvent.html"><button>Create Event</button></a></div>
+          <div class="tablinks" id='myEvents'><a href="./index.html"><button><p>My Events</p></button></a></div>
+          <div class="tablinks" id='upcoming'><a href="./upcoming.html"><button><p>Upcoming Events</p></button></a></div>
+          <div  class="tablinks" id='create'><a href="./createEvent.html"><button><p>Create Event</p></button></a></div>
       </div>
-
 
 <!--     <div id='form'>This is where the form should be</div>
  -->
 
-    <br>
-    <br>
-    <br>
 
-    <form action='./index.html'>
-      <p><input id="eventName" placeholder="Event Name"></p>
-      <p id='pic-upload'>Add an image<input type="file" name="eventPic"></p>
-      <p>Date: <input type="date" placeholder="MM/DD/YYYY">  Time: <input id="appt-time" type="time" name="appt-time"> </p>
-      <p><textarea id="description" placeholder="Give your event a catchy description"></textarea></p>
-      <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
-      <p><textarea id="tags" placeholder="Event Tags. Try #food #dance #networking"></textarea></p>
-      <p><input type="submit" value="Create Event"></p>
-    </form>
+    <div id = 'form'>
+      <form action='./index.html'>
+        <p><input id="eventName" placeholder="Event Name"></p>
+        <p id='pic-upload'>Add an image<input type="file" name="eventPic"></p>
+        <p>Date: <input type="date" placeholder="MM/DD/YYYY">  Time: <input id="appt-time" type="time" name="appt-time"> </p>
+        <p><textarea id="description" placeholder="Give your event a catchy description"></textarea></p>
+        <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
+        <p><textarea id="tags" placeholder="Event Tags. Try #food #dance #networking"></textarea></p>
+        <p id = 'submit'><input type="submit" value="Create Event"></p>
+      </form>
+    </div>
+
 
     <!--    Importing Bootstrap Scripts    -->    
-
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
