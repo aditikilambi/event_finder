@@ -23,3 +23,7 @@
 .event {
 	background-color: white;
 }
+
+#share {
+	float: right;
+}
