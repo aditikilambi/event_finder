@@ -11,9 +11,16 @@
       <link href="css/tabs.css" rel="stylesheet">
       <link href="css/pageHeader.css" rel="stylesheet">
       <link href="css/form.css" rel="stylesheet">
+      <!-- Load the Firebase library before loading the body. -->
+      <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+      <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+      <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
   </head>
 
-  <body>
+  <body> 
+    <!-- Load our form script file -->
+    <script src="js/form.js"></script>
 
       <!--    Creating Page Header    -->
 
@@ -41,20 +48,29 @@
           <div  class="tablinks" id='create'><a href="./createEvent.html"><button><p>Create Event</p></button></a></div>
       </div>
 
-<!--     <div id='form'>This is where the form should be</div>
- -->
-
 
     <div id = 'form'>
-      <form action='./index.html'>
+
+      <form id='addEventForm' action='./index.html'>
+
         <p><input id="eventName" placeholder="Event Name"></p>
+        
         <p id='pic-upload'>Add an image<input type="file" name="eventPic"></p>
-        <p>Date: <input type="date" placeholder="MM/DD/YYYY">  Time: <input id="appt-time" type="time" name="appt-time"> </p>
+        
+        <p>Date: <input id= 'date' type="date" placeholder="MM/DD/YYYY">  
+          Start Time: <input id="start-time" type="time" name="appt-time"> 
+          End Time: <input id="end-time" type="time" name="appt-time"></p>
+        
         <p><textarea id="description" placeholder="Give your event a catchy description"></textarea></p>
+        
         <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
+        
         <p><textarea id="tags" placeholder="Event Tags. Try #food #dance #networking"></textarea></p>
+        
         <p id = 'submit'><input type="submit" value="Create Event"></p>
+      
       </form>
+
     </div>
 
 
@@ -64,14 +80,6 @@
 
     <script src="js/tabs.js"></script>
 
-
-    <!-- Load React. -->
-    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-
-
-    <!-- Load our React component. -->
-    <script src="js/form.js"></script>
+   
   </body>
 </html>

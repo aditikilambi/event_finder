@@ -6,7 +6,11 @@ form {
 }
 
 form p {
-	color: white;
+	color: black;
+}
+
+textarea {
+	color: black;
 }
 
 #pic-upload {

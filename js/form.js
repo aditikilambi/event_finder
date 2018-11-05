@@ -1,26 +1,53 @@
-import React from 'react';
-import './css/form.css';
+		
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDHQWb-9NmoPuKRzAwt9Tja7FNEyYECQnU",
+  authDomain: "eventfinder-1e474.firebaseapp.com",
+  databaseURL: "https://eventfinder-1e474.firebaseio.com",
+  projectId: "eventfinder-1e474",
+  storageBucket: "eventfinder-1e474.appspot.com",
+  messagingSenderId: "338849867147"
+};
 
-class form extends React.Component {
-	constructor(props) {
-	    super(props);
-	    this.state = { created: true };
- 	}
+firebase.initializeApp(config);
 
-	render() {
-    	return (
-		    <form action='./index.html'>
-		      <p><input id="eventName" placeholder="Event Name"></p>
-		      <p id='pic-upload'>Add an image<input type="file" name="eventPic"></p>
-		      <p>Date: <input type="date" placeholder="MM/DD/YYYY">  Time: <input id="appt-time" type="time" name="appt-time"> </p>
-		      <p><textarea id="description" placeholder="Give your event a catchy description"></textarea></p>
-		      <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
-		      <p><textarea id="tags" placeholder="Event Tags. Try #food #dance #networking"></textarea></p>
-		      <p><input type="submit" value="Create Event"></p>
-		    </form>
 
-    	);
-	}
-}
+var myFirebase = firebase.database().ref();
 
-ReactDOM.render(form, document.getElementById('form'));			
+var allEvents = myFirebase.child("allEvents");
+
+var addEvent = function () {
+	var name = $("#eventName").val();
+	var organization = "Latin Club";
+	var pic = $("#pic-upload").val();
+	var date = $("#date").val();
+	var startTime = $("#start-time").val();
+	var endTime = $("#end-time").val();
+	var description = $("#description").val();
+	var longd = $("#long-description").val();
+	var tags = $("#tags").val();
+
+	allEvents.push({
+		"name": name,
+		"organization": organization,
+		"picture": pic,
+		"date": date,
+		"start-time": startTime,
+		"end-time": endTime,
+		"description": description,
+		"long-des": longd,
+		"tags": tags,
+	});
+};
+
+$(window).load(function() {
+	$('#addEventForm').submit(addEvent);
+	firebase.database().ref("allEvents").orderByKey();
+});
+
+
+
+console.log("Hello World");
+
+
+
