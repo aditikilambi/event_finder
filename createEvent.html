@@ -1,3 +1,5 @@
+<html lang="en">createEvent.html
+
 <html lang="en">
   <head>
       <meta charset="utf-8">
@@ -19,27 +21,15 @@
   </head>
 
   <body> 
-      <div id = "main">
     <!-- Load our form script file -->
     <script src="js/form.js"></script>
 
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
-        <div id = "openNav" onclick="openNav()">&lt;</div>
         <h1>EventFinder</h1>
         <h3>Create Event</h3>
       </div>
-
-      <!-- Creation of side nav bar -->
-
-      <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)"  onclick="closeNav()">&times;</a>
-        <a>Search Bar, Currently a Placeholder</a>
-
-        <a href='./upcoming.html'><button>Search</button></a>
-      </div>
-
       
       <!--  Making the My events, Upcoming, and create event tabs  -->
 
@@ -61,12 +51,14 @@
         <p>Date: <input id= 'date' type="date" placeholder="MM/DD/YYYY">  
           Start Time: <input id="start-time" type="time" name="appt-time"> 
           End Time: <input id="end-time" type="time" name="appt-time"></p>
+
+        <p><input id='location' placeholder='Location of your Event'></p>
         
         <p><textarea id="description" placeholder="Give your event a catchy description"></textarea></p>
         
         <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
         
-        <p><textarea id="tags" placeholder="Event Tags. Try #food #dance #networking"></textarea></p>
+        <p><textarea id="tags" placeholder="Event Tags, separated by a space. Try food dance networking"></textarea></p>
         
         <p id = 'submit'><input type="submit" value="Create Event"></p>
       
@@ -81,7 +73,7 @@
 
     <script src="js/tabs.js"></script>
 
-   </div>
+   
   </body>
 </html>
 

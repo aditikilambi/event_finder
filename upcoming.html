@@ -13,10 +13,19 @@
 
       <!--- Stylesheet for share icon -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- Load the Firebase library before loading the body. -->
+      <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+      <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+      <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   </head>
 
   <body>
     <div id = "main">
+
+      <!-- Load our form script file -->
+      <script src="js/form.js"></script>
+      
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
@@ -49,68 +58,7 @@
 
 
     <div id="pgContent" class='up'>
-
-      <br>
-      <br>
-      <br>
-
-      <div style="border:1px solid #B6B1A9;padding-left:25px;margin-right:10%" class='event'>
-        <div id='share'>
-          <a href='./createEvent.html'><button>Edit Event</button></a>
-          <a href='./share.html'><button><i class="fa fa-share-alt" style="font-size:24px"></i></button></a>
-        </div>
-        <h3>Oct 30th</h3>
-        <h4><b>Fall Recruitment</b></h4>
-        <p style="padding:15px;">
-          Organization: Latin Club
-          <br>
-          <br>
-          Time: 4:30PM - 7:30PM
-          <br>
-          <br>
-          Location: PC Ballroom
-          <br>
-          <br>
-          Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et...
-          <p style="text-align:right;padding-right:15px;">
-            <a href="./seemore.html">see more</a>
-          </p>
-
-
-        </p>
-      </div>
-
-      <br>
-      <br>
-      <br>
-
-      <div style="border:1px solid #B6B1A9;padding-left:25px;margin-right:10%" class='event'>
-        <div id='share'>
-          <a href='./createEvent.html'><button>Edit Event</button></a>
-          <a href='./share.html'><button><i class="fa fa-share-alt" style="font-size:24px"></i></button></a>
-        </div>
-        <h3>Oct 31st</h3>
-        <h4><b>Halloween Bash</b></h4>
-        <p style="padding:15px;">
-          Organization: Latin Club
-          <br>
-          <br>
-          Time: 9PM - 12AM
-          <br>
-          <br>
-          Location: Secret
-          <br>
-          <br>
-          Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et...
-          <p style="text-align:right;padding-right:15px;">
-            <a href="./seemore.html">see more (if you click me I will redirect to the Oct 30th see more page)</a>
-          </p>
-        </p>
-      </div>
-
-      <br>
-      <br>
-      <br>
+      <p>Loading Events ... </p>
     </div>
     <!--    Importing Bootstrap Scripts    -->
     <script src="https://code.jquery.com/jquery.js"></script>
