@@ -1,3 +1,5 @@
+/* Function for creating tabs */
+
 function eventTabs(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -12,12 +14,16 @@ function eventTabs(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+
+/* Function for opening and closing nav bar */
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("main").style.marginRight = "250px";
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("main").style.marginRight= "0";
 }
+
+openNav();
