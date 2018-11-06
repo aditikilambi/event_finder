@@ -25,7 +25,7 @@ var addEvent = function () {
 	var endTime = $("#end-time").val();
 	var description = $("#description").val();
 	var longd = $("#long-description").val();
-	var tags = $("#tags").val();
+	var tags = $("#tags").val().split(" ");
 
 	allEvents.push({
 		"name": name,
@@ -42,10 +42,7 @@ var addEvent = function () {
 
 $(window).load(function() {
 	$('#addEventForm').submit(addEvent);
-	firebase.database().ref("allEvents").orderByKey();
 });
-
-
 
 console.log("Hello World");
 
