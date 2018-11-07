@@ -19,11 +19,18 @@ function eventTabs(evt, tabName) {
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginRight = "250px";
+    document.getElementById('openNav').className = "hide";
+
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginRight= "0";
+}
+
+function onClick(){
+  document.getElementById('openNav').className = "show";
+  console.log("Clicked function");
 }
 
 openNav();

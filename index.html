@@ -27,19 +27,16 @@
 
       <!-- Load our form script file -->
       <script src="js/form.js"></script>
-      
       <!--    Creating Page Header    -->
-
-      <div class = 'jumbotron' id='pageHeader'>
-        <div id = "openNav" onclick="openNav()">&lt;</div>
-        <h1>EventFinder</h1>
+      <div class = 'jumbotron' id='pageHeader'>
+        <div id = "openNav" class='hide' onclick="openNav()"><i class="fa fa-search"></i></div>
+        <h1>EventFinder</h1>
         <h3>Welcome back, Latin Club</h3>
       </div>
-
       <!-- Creation of side nav bar -->
 
       <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)"  onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)"  onclick="closeNav(); onClick();">&times;</a>
         <a>Search Bar, Currently a Placeholder</a>
 
         <a href='./upcoming.html'><button>Search</button></a>

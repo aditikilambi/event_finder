@@ -98,19 +98,24 @@ body {font-family: Arial;}
     float: right;
 }
 
-#openNav{
+#openNav {
     float: right;
     font-weight: bold;
     font-size: 50px;
     padding-right: 10%;
-    opacity: 50%;
-
 }
 
-#opennav:hover{
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#openNav:hover{
     color: blue;
-    opacity: 100:;
-    border-color: green;
+    opacity: 50%;
 }
 
 #main {

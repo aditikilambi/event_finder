@@ -7,6 +7,14 @@
 	background-color: white;
 }
 
+#pageHeader-home{
+	padding-left: 10%;
+	max-width: 100%;
+	height: 30%;
+	margin: 0;
+	background-color: white;
+}
+
 .up {
 	background-color: #FFCD00;
 }

@@ -31,7 +31,7 @@
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
-        <div id = "openNav" onclick="openNav()">&lt;</div>
+        <div id = "openNav" class='hide' onclick="openNav()"><i class="fa fa-search"></i></div>
         <h1>EventFinder</h1>
         <h3>Upcoming Events</h3>
       </div>
@@ -40,7 +40,7 @@
 
 
       <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)"  onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)"  onclick="closeNav(); onClick();">&times;</a>
         <a>Search Bar, Currently a Placeholder</a>
         <a href='./upcoming.html'><button>Search</button></a>
       </div>
