@@ -52,35 +52,40 @@ $(window).load(function() {
 		snapshot.forEach(function(snapshot) {	
 			var obj = snapshot.val();
 			x = x + 
-			"<div id='share'>" +
-         	 	"<a href='./createEvent.html'><button>Edit Event</button></a>" +
-         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
-       		 "</div>" +
-       		 "<div class='date'>" +
-       		 	"<p>" + obj.date + "</p>" +
-       		 "</div>" +
-       		 "<div class='title'>" +
-       		 	"<p>" + obj.name + "</p>" +
-       		 "</div>" +
-       		 " <div class='image'>" +
-          		"<img />" +
-        	 "</div>" +
-        	 "<div class='time'>" +
-        	 	"<p>" + obj.startTime + " - " + obj.endTime +
-        	 "</div>" ;
+        	"<div class='container event'>" +
+          		"<div class='row'>" +
+		            "<div class='col-sm-3 date'>" +
+		       		 	"<p>" + obj.date + "</p>" +
+		       		 "</div>" +
 
-        	 x = x + "<div class='organization'>" +
-        	 	"<p> Organization: " + obj.organization + "</p>" +
-        	 "</div>" +
-        	 "<div class='location'>" +
-        	 	"<p>Location: " + obj.location + "</p>" +
-        	 "</div>" +
-        	 "<div class='Description'>" +
-        	 	"<p>" + obj.description + "</p>" +
-        	 "</div>" +
-        	 "<p style='text-align:right;padding-right:15px;''>" +
-            	"<a href='./seemore.html'>see more</a>" +
-        	 "</p>";
+		       		 "<div class='col-sm-8 title'>"+
+		       		 	"<p>" + obj.name + "</p>" +
+		       		 "</div>" +
+
+					"<div 'col-sm-2 share'>" +
+		         	 	"<a href='./createEvent.html'><button>Edit Event</button></a>" +
+		         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
+		       		 "</div>" +
+       		 	"</div>"+
+
+	       		 "<div class='col-sm-3' id='eventimage'>" +
+	          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+	        	 "</div>" +
+
+	        	 "<div class='col-sm-9 description'>"+
+
+	        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
+	        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
+	        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
+	        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
+
+
+	              "<div class='seemore'>" +
+	            	"<a href='./seemore.html'>see more</a>" +
+	              "</div>" +
+	              "</div>" +
+
+              "</div><br><br><br>";
 
 		 	if (document.getElementById('pgContent') == null) return;
 		 	document.getElementById('pgContent').innerHTML = x
