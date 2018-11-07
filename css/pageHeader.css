@@ -7,25 +7,10 @@
 	background-color: white;
 }
 
-/*added to make page content in line with header*/
-#pgContent {
-	padding-left: 10%;
-}
-
 .up {
 	background-color: #FFCD00;
 }
 
 .index {
 	background-color: #00C6D7;
-}
-
-.event {
-	background-color: white;
-}
-
-#share {
-	float: right;
-	padding-right: 10px;
-	padding-top: 10px;
 }

@@ -1,0 +1,62 @@
+#eventimage {
+  padding: 15px 0px 15px 0px;
+}
+
+.share {
+	text-align: right;
+	padding-top: 10px;
+	padding-right: 0px;
+}
+
+/*added to make page content in line with header*/
+.event {
+	/* max-width: 85%; */
+	/* margin: 0; */
+	background-color: white;
+	border:1px solid #B6B1A9;
+	/*should edit out later*/
+	/* padding-left:25px; */
+	/* margin-right: 10%; */
+}
+
+.date {
+	/* make the date appear in a box */
+	max-width: 100px;
+	max-height: 100px;
+	min-width: 100px;
+	min-height: 100px;
+  padding: 10px;
+	margin: 0px;
+	border-right: solid #595959;
+	border-bottom: solid #595959;
+	border-width: thin;
+	text-align: center;
+	justify-content: center;
+	font-size: 27px;
+	/* overflow: hidden; */
+	/* position: absolute; */
+}
+
+.title {
+	font-weight: 525;
+	font-size: 36px;
+	display: inline-block;
+	/*padding is when at fullscreen
+	stretch goal to resize correctly at any size*/
+	padding: 20px;
+}
+
+.description{
+	padding: 15px 15px;
+	font-size: 16px;
+}
+
+.seemore{
+	text-align:right;
+	/* max-width: 60px;
+	max-height: 17px;
+	min-width: 60px;
+	min-height: 17px; */
+	/* padding: 0px 15px 0px 0px; */
+	/* margin-bottom: 0px; */
+}

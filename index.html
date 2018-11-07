@@ -10,6 +10,7 @@
       <link href="css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="css/tabs.css" rel="stylesheet">
       <link href="css/pageHeader.css" rel="stylesheet">
+      <link href="css/events.css" rel="stylesheet">
 
       <!--- Stylesheet for share icon -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,7 +23,7 @@
 
 <body>
 
-  <div id = "main">
+  <div id="main">
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
@@ -40,8 +41,6 @@
         <a href='./upcoming.html'><button>Search</button></a>
       </div>
 
-
-      
       <!--  Making the My events, Upcoming, and create event tabs  -->
 
       <div class="tab">
@@ -50,105 +49,59 @@
           <div  class="tablinks" id='create'><a href="./createEvent.html"><button><p>Create Event</p></button></a></div>
       </div>
 
-
       <!-- Placeholder Content --->
-
-
-    <div id="pgContent" class='index'>
-
+      <div class='index'>
+      <!--makes background blue-->
       <br>
       <br>
       <br>
 
- 
-      <div style="border:1px solid #B6B1A9;padding-left:25px;margin-right:10%" class='event'>
-        <div id='share'>
-          <a href='./createEvent.html'><button>Edit Event</button></a>
-          <a href='./share.html'><button><i class="fa fa-share-alt" style="font-size:24px"></i></button></a>
-        </div>
-        <h3>Oct 30th</h3>
-        <h4><b>Fall Recruitment</b></h4>
-        <p style="padding:15px;">
-          Organization: Latin Club
-          <br>
-          <br>
-          Time: 4:30PM - 7:30PM
-          <br>
-          <br>
-          Location: PC Ballroom
-          <br>
-          <br>
-          Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et...
-          <p style="text-align:right;padding-right:15px;">
-            <a href="./seemore.html">see more</a>
-          </p>
+        <!--first need to make container parent class
+        then row, then columns
+        put event class to have white box-->
+        <div class="container event">
+          <!--creating grid using bootstrap-->
+          <div class="row">
+            <!--left most column-->
+            <div class="col-sm-3 date">
+              <!--month and day-->
+              <p>Oct <br> 31st</p>
+            </div>
+            <!--middle column-->
+            <div class="col-sm-8 title">
+              <p>Halloween Bash</p>
+            </div>
+            <!--right most column-->
+            <div class="col-sm-2 share">
+                <a href='./createEvent.html'><button>Edit Event</button></a>
+                <a href='./share.html'><button><i class="fa fa-share-alt" style="font-size:24px"></i></button></a>
+              </div>
+            </div>
 
-
-        </p>
+            <!--left most column-->
+            <div class="col-sm-3" id='eventimage'>
+              <img class="img-responsive" src='./images/500holder.png'/>
+            </div>
+            <!--right column-->
+            <div class="col-sm-9 description">
+              <p><strong>Time:</strong> 9PM - 12AM</p>
+              <p><strong>Organization:</strong> <u>Latin Club</u></p>
+              <!--figure out how to make club clickable link-->
+              <p><strong>Location:</strong> Secret</p>
+              <!--500 characters, not including description-->
+              <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error s...
+              </p>
+              <!--in full view, see more is higher than desired but that's because of the image size
+              stretch goal to fix later-->
+              <div class="seemore">
+                <p><a href="./seemore.html">see more</a></p>
+              </div>
+          </div>
       </div>
 
       <br>
       <br>
       <br>
-
-      <div style="border:1px solid #B6B1A9;padding-left:25px;margin-right:10%" class='event'>
-        <div id='share'>
-          <a href='./createEvent.html'><button>Edit Event</button></a>
-          <a href='./share.html'><button><i class="fa fa-share-alt" style="font-size:24px"></i></button></a>
-        </div>
-        <h3>Oct 31st</h3>
-        <h4><b>Halloween Bash</b></h4>
-        <p style="padding:15px;">
-          Organization: Latin Club
-          <br>
-          <br>
-          Time: 9PM - 12AM
-          <br>
-          <br>
-          Location: Secret
-          <br>
-          <br>
-          Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et...
-          <p style="text-align:right;padding-right:15px;">
-            <a href="./seemore.html">see more (if you click me I will redirect to the Oct 30th see more page)</a>
-          </p>
-        </p>
-      </div>
-
-      <br>
-      <br>
-      <br>
-      <div class='event'>
-        <div id='share'>
-          <a href='./createEvent.html'><button>Edit Event</button></a>
-          <a href='./share.html'><button><i class="fa fa-share-alt" style="font-size:24px"></i></button></a>
-        </div>
-        <div class='date'>
-          <p>Oct 31st</p>
-        </div>
-        <div class='title'>
-          <p>Halloween Bash</p>
-        </div>
-        <div class='image'>
-          <img src='https://images.pexels.com/photos/1439390/pexels-photo-1439390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' />
-        </div>
-        <div class='time'>
-          <p>Time: 9PM - 12AM</p>
-        </div>
-        <div class='organization'>
-          <p>Organization: Latin Club</p>
-        </div>
-        <div class='location'>
-          <p>Location: Secret</p>
-        </div>
-        <div class='Description'>
-          <p>Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et...</p>
-        </div>
-        <p style="text-align:right;padding-right:15px;">
-            <a href="./seemore.html">see more</a>
-        </p>
-      </div>
-
     </div>
     <!--    Importing Bootstrap Scripts    -->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -157,4 +110,3 @@
   </div>
   </body>
 </html>
-
