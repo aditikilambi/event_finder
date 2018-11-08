@@ -22,7 +22,7 @@
       <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   </head>
 
-  <body>
+  <body class="preload">
     <div id = "main">
 
       <!-- Load our form script file -->
@@ -71,6 +71,9 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/tabs.js"></script>
+    <!-- Removes preload class after webpage is opened -->
+    <script>$(window).load(function() {
+      $("body").removeClass("preload");});</script>  
     </div>
   </body>
 </html>

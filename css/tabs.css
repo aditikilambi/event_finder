@@ -40,7 +40,7 @@ body {font-family: Arial;}
 }
 
 .tablinks {
-    width: 33%;
+    width: 33.333%;
 }
 
 .tab #myEvents {
@@ -73,6 +73,7 @@ body {font-family: Arial;}
     right: 0;
     background-color: #111;
     overflow-x: hidden;
+    transition: 0.5s;
     padding-top: 60px;
 }
 
