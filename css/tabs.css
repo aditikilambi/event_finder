@@ -1,4 +1,8 @@
-body {font-family: Arial;}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; /* Corresponds to the Regular 400 style */
+}
 
 /* Style the tab */
 .tab {
@@ -115,7 +119,7 @@ body {font-family: Arial;}
 }
 
 #openNav:hover{
-    color: blue;
+    color: green;
     opacity: 50%;
 }
 

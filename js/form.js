@@ -46,12 +46,12 @@ $(window).load(function() {
 });
 
 $(window).load(function() {
-	allEvents.once('value',function(snapshot) 
+	allEvents.once('value',function(snapshot)
 	{
-		var x = ' ';	
-		snapshot.forEach(function(snapshot) {	
+		var x = ' ';
+		snapshot.forEach(function(snapshot) {
 			var obj = snapshot.val();
-			x = x + 
+			x = x +
         	"<div class='container event'>" +
           		"<div class='row'>" +
 		            "<div class='col-sm-3 date'>" +
@@ -62,7 +62,7 @@ $(window).load(function() {
 		       		 	"<p>" + obj.name + "</p>" +
 		       		 "</div>" +
 
-					"<div 'col-sm-2 share'>" +
+					"<div class='col-sm-2 share'>" +
 		         	 	"<a href='./createEvent.html'><button>Edit Event</button></a>" +
 		         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 		       		 "</div>" +
@@ -92,6 +92,3 @@ $(window).load(function() {
 		});
 	});
 });
-
-
-
