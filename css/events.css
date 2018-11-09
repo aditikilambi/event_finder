@@ -1,3 +1,5 @@
+events.css
+
 #eventimage {
   padding: 15px 0px 15px 0px;
 }
@@ -11,6 +13,7 @@
 /*added to make page content in line with header*/
 .event {
 	/* max-width: 85%; */
+	position: relative;
 	background-color: white;
 	border:1px solid #B6B1A9;
 	/*should edit out later*/
@@ -50,12 +53,33 @@
 	font-size: 16px;
 }
 
-.seemore{
+#seemore {
 	text-align:right;
+	bottom: 0;
 	/* max-width: 60px;
 	max-height: 17px;
 	min-width: 60px;
 	min-height: 17px; */
 	/* padding: 0px 15px 0px 0px; */
 	/* margin-bottom: 0px; */
+}
+
+#seeless {
+	text-align:right;
+	bottom: 0;
+	/* max-width: 60px;
+	max-height: 17px;
+	min-width: 60px;
+	min-height: 17px; */
+	/* padding: 0px 15px 0px 0px; */
+	/* margin-bottom: 0px; */
+}
+
+
+.dontShow {
+	display: none;
+}
+
+.displayit {
+	display: block;
 }

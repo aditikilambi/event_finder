@@ -27,6 +27,8 @@
 
       <!-- Load our form script file -->
       <script src="js/form.js"></script>
+      <script src="js/event.js"></script>
+
       
       <!--    Creating Page Header    -->
 
@@ -40,21 +42,34 @@
 
 
       <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)"  onclick="closeNav(); onClick();">&times;</a>
-        <a>Search Bar, Currently a Placeholder</a>
-        <a href='./upcoming.html'><button>Search</button></a>
+
+        <div id='closeSearch'>
+          <p><a href="javascript:void(0)"  onclick="closeNav(); onClick();">&times;</a></p>
+        </div>
+        
+
+        <form id='searchbar' action='./upcoming.html'><!-- 
+          <p><input type="text" placeholder="&#xF002; Search All Events" style="font-family:Arial, FontAwesome" /></p> -->
+          <p>Filters: </p>
+          <p><select id="Organization">    
+            <option value="">Organization</option>
+            <option value="Latin Club">Latin Club</option>
+            <option value="Design Club">Design Club</option>
+            <option value="Dance Club">Dance Club</option>
+            <option value="Music Club">Music Club</option>
+          </select></p>
+          <p id = 'submit'><input type="submit" value="Search"></p>
+        </form>
       </div>
 
       
       <!--  Making the My events, Upcoming, and create event tabs  -->
-
+      
       <div class="tab">
           <div class="tablinks" id='myEvents'><a href="./myEvents.html" style="text-decoration: none"><button><p>My Events</p></button></a></div>
           <div class="tablinks" id='upcoming'><a href="./upcoming.html" style="text-decoration: none"><button><p>Upcoming Events</p></button></a></div>
           <div  class="tablinks" id='create'><a href="./createEvent.html" style="text-decoration: none"><button><p>Create Event</p></button></a></div>
       </div>
-
-
 
       <!-- Placeholder Content --->
 
@@ -63,7 +78,7 @@
       <br>
       <br>
       <br>
-      <div id="pgContent">
+      <div id="allEventContent" class="show">
         <p>Loading Events ... </p>
       </div>
     </div> 

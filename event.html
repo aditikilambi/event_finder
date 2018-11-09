@@ -40,3 +40,134 @@
             </div>
           </div>
         </div>
+
+
+
+                <!--first need to make container parent class
+        then row, then columns
+        put event class to have white box-->
+        <div class="container event">
+          <!--creating grid using bootstrap-->
+          <div class="row">
+            <!--left most column-->
+            <div class="col-sm-3 date">
+              <!--month and day-->
+              <p>Oct <br> 31st</p>
+            </div>
+            <!--middle column-->
+            <div class="col-sm-8 title">
+              <p>Halloween Bash</p>
+            </div>
+            <!--right most column-->
+            <div "col-sm-2 share"class=>
+                <a href='./createEvent.html'><button>Edit Event</button></a>
+                <a href='./share.html'><button><i class="fa fa-share-alt" style="font-size:24px"></i></button></a>
+            </div>
+          </div>
+
+            <!--left most column-->
+          <div class="col-sm-3" id='eventimage'>
+            <img class="img-responsive" src='./images/500holder.png'/>
+          </div>
+            <!--right column-->
+          <div class="col-sm-9 description">
+            <p><strong>Time:</strong> 9PM - 12AM</p>
+            <p><strong>Organization:</strong> <u>Latin Club</u></p>
+            <!--figure out how to make club clickable link-->
+            <p><strong>Location:</strong> Secret</p>
+            <!--500 characters, not including description-->
+            <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error s...
+            </p>
+            <p id='longBoi' class='dontshow'>
+              <strong>Details: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error s...
+            </p>
+            <!--in full view, see more is higher than desired but that's because of the image size
+            stretch goal to fix later-->
+            <div id="seemore" class='displayIt' onclick="clickIt()">
+              <p><button>see more</button></p>
+            </div>
+            <div id='seeless' class='dontshow' onclick="clickItBack()">
+              <p><button>see less</button></p>
+            </div>
+
+            <script>
+                function clickIt() {
+                    document.getElementById('seemore').className = "dontshow";
+                    document.getElementById('seeless').className = "displayIt";
+                    document.getElementById('longBoi').className = "displayIt";
+                }
+                function clickItBack(){
+                    document.getElementById('seemore').className = "displayIt";
+                    document.getElementById('seeless').className = "dontshow";
+                    document.getElementById('longBoi').className = "dontshow";
+                  }
+            </script>
+
+
+          </div>
+        </div>
+
+      <br>
+      <br>
+      <br>
+
+              <div class="container event">
+          <!--creating grid using bootstrap-->
+          <div class="row">
+            <!--left most column-->
+            <div class="col-sm-3 date">
+              <!--month and day-->
+              <p>Oct <br> 31st</p>
+            </div>
+            <!--middle column-->
+            <div class="col-sm-8 title">
+              <p>Halloween Bash</p>
+            </div>
+            <!--right most column-->
+            <div "col-sm-2 share"class=>
+                <a href='./createEvent.html'><button>Edit Event</button></a>
+                <a href='./share.html'><button><i class="fa fa-share-alt" style="font-size:24px"></i></button></a>
+            </div>
+          </div>
+
+            <!--left most column-->
+          <div class="col-sm-3" id='eventimage'>
+            <img class="img-responsive" src='./images/500holder.png'/>
+          </div>
+            <!--right column-->
+          <div class="col-sm-9 description">
+            <p><strong>Time:</strong> 9PM - 12AM</p>
+            <p><strong>Organization:</strong> <u>Latin Club</u></p>
+            <!--figure out how to make club clickable link-->
+            <p><strong>Location:</strong> Secret</p>
+            <!--500 characters, not including description-->
+            <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error s...
+            </p>
+            <p id='longBoi' class='dontshow'>
+              <strong>Details: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error s...
+            </p>
+            <!--in full view, see more is higher than desired but that's because of the image size
+            stretch goal to fix later-->
+            <div id="seemore" class='displayIt' onclick="clickIt()">
+              <p><button>see more</button></p>
+            </div>
+            <div id='seeless' class='dontshow' onclick="clickItBack()">
+              <p><button>see less</button></p>
+            </div>
+
+            <script>
+                function clickIt() {
+                    document.getElementById('seemore').className = "dontshow";
+                    document.getElementById('seeless').className = "displayIt";
+                    document.getElementById('longBoi').className = "displayIt";
+                }
+                function clickItBack(){
+                    document.getElementById('seemore').className = "displayIt";
+                    document.getElementById('seeless').className = "dontshow";
+                    document.getElementById('longBoi').className = "dontshow";
+                  }
+            </script>
+
+
+          </div>
+        </div>

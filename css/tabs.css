@@ -1,9 +1,7 @@
-
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; /* Corresponds to the Regular 400 style */
 }
-
 /* Style the tab */
 .tab {
     display: flex;
@@ -75,24 +73,30 @@ body {
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: #111;
+    background-color: #B6B1A9;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
 }
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
+.sidenav p {
+    padding: 8px 8px 8px 20px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 20px;
+    color: black;
     display: block;
     transition: 0.3s;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
+.sidenav p:hover {
+    color: gray;
 }
+
+#closeSearch {
+    float: right;
+    padding-right: 20px;
+}
+
 
 .sidenav .closebtn {
     position: absolute;
@@ -119,8 +123,17 @@ body {
 }
 
 #openNav:hover{
-    color: green;
+    color: blue;
     opacity: 50%;
+}
+
+input {
+    width: 200px;
+    color: #B6B1A9;
+}
+
+select {
+    width: 200px;
 }
 
 #main {
