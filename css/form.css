@@ -3,14 +3,25 @@ form {
 	background-color: #6E963B;
 	padding-top: 40px;
 	padding-bottom: 40px;
+	margin: 0;
 }
 
 form p {
-	color: black;
+	color: white;
+	margin: 0 0 20px;
+}
+
+form input {
+	/* "no file chosen" should be white but is grey b/c of input*/
+	color: #B6B1A9;
 }
 
 textarea {
 	color: black;
+}
+
+::placeholder {
+  color: #B6B1A9;
 }
 
 #pic-upload {
@@ -37,6 +48,20 @@ textarea {
 	height: 50px;
 }
 
+/* necessary?
 #submit {
 	color: black;
-}
+} */
+
+/*stretch goal to make submit button same color as upcoming events tab*/
+/* .submitButton {
+	same as my events
+  background-color: #00C6D7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} */
