@@ -27,6 +27,7 @@ var addEvent = function () {
 	var description = $("#description").val();
 	var longd = $("#long-description").val();
 	var tags = $("#tags").val().split(" ");
+	var eventType = $( "#eventType option:selected" ).val();
 
 
 	allEvents.push({
@@ -40,7 +41,9 @@ var addEvent = function () {
 		"description": description,
 		"longDes": longd,
 		"tags": tags,
+		"eventTypes": eventType,
 	});
+
 
 };
 
@@ -51,9 +54,10 @@ $(window).load(function() {
 
 var searchterms = function() {
 	var organization = $( "#Organization option:selected" ).val();
+	var eventTypeS = $( "#eventTypeSearch option:selected" ).val();
 	localStorage.setItem('search', true);
 	localStorage.setItem('orgSearch', organization);
-	localStorage.setItem('locationSearch', 'Taste of the Himalayas');
+	localStorage.setItem('type', eventTypeS);
 }
 
 $(window).load(function() {
@@ -200,14 +204,28 @@ $(window).load(function() {
 	if(localStorage.getItem('search')) {
 
 		var orgToSearch = localStorage.getItem('orgSearch');
-		var locationToSearch = localStorage.getItem('locationSearch');
+		var etypeToSearch = localStorage.getItem('type');
 		
 		var tempEvents= myFirebase.child("allEvents");
 		
-		var searchRef = querybase.ref(tempEvents, ['organization', 'location']).where({
-				organization: orgToSearch,
-				// location: locationToSearch,
-		});
+		if(orgToSearch != "" && etypeToSearch != ""){
+			console.log("Entered here");
+			var searchRef = querybase.ref(tempEvents, ['organization', 'eventTypes']).where({
+					organization: orgToSearch,
+					eventTypes: etypeToSearch,
+			});
+		}
+		else if(orgToSearch != ""){
+			var searchRef = querybase.ref(tempEvents, ['organization']).where({
+					organization: orgToSearch,
+			});
+		}
+		else if(etypeToSearch != ""){
+			var searchRef = querybase.ref(tempEvents, ['eventTypes']).where({
+					eventTypes: etypeToSearch,
+			});
+		}
+
 
 		searchRef.once('value',function(snapshot) 
 		{

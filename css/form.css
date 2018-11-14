@@ -7,13 +7,13 @@ form {
 }
 
 form p {
-	color: white;
+	color: black;
 	margin: 0 0 20px;
 }
 
 form input {
 	/* "no file chosen" should be white but is grey b/c of input*/
-	color: #B6B1A9;
+	color: black;
 }
 
 textarea {

@@ -38,25 +38,53 @@
       </div>
       <!-- Creation of side nav bar -->
 
-      <div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav">
 
         <div id='closeSearch'>
           <p><a href="javascript:void(0)"  onclick="closeNav(); onClick();">&times;</a></p>
         </div>
+        
+
         <form id='searchbar' action='./upcoming.html'>
-<!--           <p><input type="text" placeholder="&#xF002; Search All Events" style="font-family:Arial, FontAwesome" /></p>
- -->          <p>Filters: </p>
-          <p><select name="Organization">    
+          <p>Filters: </p>
+          <p><select id="Organization">    
             <option value="">Organization</option>
             <option value="Latin Club">Latin Club</option>
             <option value="Design Club">Design Club</option>
             <option value="Dance Club">Dance Club</option>
             <option value="Music Club">Music Club</option>
+          </select></p>         
+
+          <p><select id="eventTypeSearch">    
+            <option value="">Event Category</option>
+            <option value="art">Art</option>
+            <option value="comedy">Comedy</option>
+            <option value="dance">Dance</option>
+            <option value="music">Music</option>
+            <option value="food">Food</option>
+            <option value="networking">Networking</option>
+            <option value="party">Party</option>
+            <option value="other">Other</option>
           </select></p>
 
+          <p><select id="Time">    
+            <option value="">Time</option>
+            <option value="">Time1</option>
+            <option value="">Time2</option>
+            <option value="">Time3</option>
+            <option value="">Time4</option>
+          </select></p> 
+
+          <br><br><br><br>
+
+          <p>Search Event Tags: </p>
+          <p>Clickable example tags</p>
+          <p><input type="text" placeholder="&#xF002; Search for a tag" style="font-family:Arial, FontAwesome" /></p>
+
+          <br><br><br><br>
+          
           <p id = 'submit'><input type="submit" value="Search"></p>
         </form>
-
       </div>
 
 

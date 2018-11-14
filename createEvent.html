@@ -55,13 +55,25 @@
           End Time: <input id="end-time" type="time" name="appt-time"></p>
 
         <p><input id='location' placeholder='Location of your Event'></p>
+
+        <p><select id="eventType">    
+          <option value="">Event Category</option>
+          <option value="art">Art</option>
+          <option value="comedy">Comedy</option>
+          <option value="dance">Dance</option>
+          <option value="music">Music</option>
+          <option value="food">Food</option>
+          <option value="networking">Networking</option>
+          <option value="party">Party</option>
+          <option value="other">Other</option>
+        </select></p>
         
         <p><textarea id="description" placeholder="Give your event a catchy description"></textarea></p>
         
         <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
         
         <p><textarea id="tags" placeholder="Event Tags, separated by a space. Try food dance networking"></textarea></p>
-        
+
         <p id = 'submit'><input type="submit" value="Create Event"></p>
       
       </form>
