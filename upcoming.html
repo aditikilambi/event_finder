@@ -20,6 +20,8 @@
       <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
       <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
       <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+      <script src="https://unpkg.com/querybase@0.6.0"></script>
+
   </head>
 
   <body class="preload">
@@ -28,6 +30,7 @@
       <!-- Load our form script file -->
       <script src="js/form.js"></script>
       <script src="js/event.js"></script>
+
 
       
       <!--    Creating Page Header    -->
@@ -48,8 +51,8 @@
         </div>
         
 
-        <form id='searchbar' action='./upcoming.html'><!-- 
-          <p><input type="text" placeholder="&#xF002; Search All Events" style="font-family:Arial, FontAwesome" /></p> -->
+        <form id='searchbar' action='./upcoming.html'>
+          <p><input type="text" placeholder="&#xF002; Search All Events" style="font-family:Arial, FontAwesome" /></p>
           <p>Filters: </p>
           <p><select id="Organization">    
             <option value="">Organization</option>
@@ -58,13 +61,14 @@
             <option value="Dance Club">Dance Club</option>
             <option value="Music Club">Music Club</option>
           </select></p>
+
           <p id = 'submit'><input type="submit" value="Search"></p>
         </form>
       </div>
 
       
       <!--  Making the My events, Upcoming, and create event tabs  -->
-      
+
       <div class="tab">
           <div class="tablinks" id='myEvents'><a href="./myEvents.html" style="text-decoration: none"><button><p>My Events</p></button></a></div>
           <div class="tablinks" id='upcoming'><a href="./upcoming.html" style="text-decoration: none"><button><p>Upcoming Events</p></button></a></div>

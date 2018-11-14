@@ -1,3 +1,4 @@
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyDHQWb-9NmoPuKRzAwt9Tja7FNEyYECQnU",
@@ -13,7 +14,7 @@ firebase.initializeApp(config);
 
 var myFirebase = firebase.database().ref();
 
-var allEvents = myFirebase.child("allEvents");
+var allEvents = myFirebase.child("allEvents").orderByChild("date");
 
 var addEvent = function () {
 	var name = $("#eventName").val();
@@ -27,6 +28,7 @@ var addEvent = function () {
 	var longd = $("#long-description").val();
 	var tags = $("#tags").val().split(" ");
 
+
 	allEvents.push({
 		"name": name,
 		"organization": organization,
@@ -39,6 +41,7 @@ var addEvent = function () {
 		"longDes": longd,
 		"tags": tags,
 	});
+
 };
 
 $(window).load(function() {
@@ -48,12 +51,39 @@ $(window).load(function() {
 
 var searchterms = function() {
 	var organization = $( "#Organization option:selected" ).val();
-	localStorage.setItem('search', organization);
+	localStorage.setItem('search', true);
+	localStorage.setItem('orgSearch', organization);
+	localStorage.setItem('locationSearch', 'Taste of the Himalayas');
 }
 
 $(window).load(function() {
 	$('#searchbar').submit(searchterms);
 });
+
+
+function date(dateString){
+	var month = dateString.substring(5,7);
+	var returnMonth = '';
+	if(month === "01")returnMonth = 'Jan';
+	else if(month === "02")returnMonth = 'Feb';
+	else if(month === "03")returnMonth = 'Mar';
+	else if(month === "04")returnMonth = 'Apr';
+	else if(month === "05")returnMonth = 'May';
+	else if(month === "06")returnMonth = 'Jun';
+	else if(month === "07")returnMonth = 'Jul';
+	else if(month === "08")returnMonth = 'Aug';
+	else if(month === "09")returnMonth = 'Sep';
+	else if(month === "10")returnMonth = 'Oct';
+	else if(month === "11")returnMonth = 'Nov';
+	else if(month === "12")returnMonth = 'Dec';
+
+	return returnMonth + '   ' + dateString.substring(8,10);
+}
+
+
+// function time(start, end){
+
+// }
 
 /*  Method for populating myEvents Page with only events from the organization */
 $(window).load(function() {
@@ -68,7 +98,7 @@ $(window).load(function() {
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
-				       		 	"<p>" + obj.date + "</p>" +
+				       		 	"<p>" + date(obj.date) + "</p>" +
 				       		 "</div>" +
 
 				       		 "<div class='col-sm-8 title'>"+
@@ -124,7 +154,7 @@ $(window).load(function() {
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
-				       		 	"<p>" + obj.date + "</p>" +
+				       		 	"<p>" + date(obj.date) + "</p>" +
 				       		 "</div>" +
 
 				       		 "<div class='col-sm-8 title'>"+
@@ -132,7 +162,6 @@ $(window).load(function() {
 				       		 "</div>" +
 
 							"<div 'col-sm-2 share'>" +
-				         	 	"<a href='./createEvent.html'><button>Edit Event</button></a>" +
 				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 				       		 "</div>" +
 		       		 	"</div>"+
@@ -168,11 +197,19 @@ $(window).load(function() {
 });
 
 $(window).load(function() {
-	if(localStorage.getItem('search') != null) {
+	if(localStorage.getItem('search')) {
 
-		var toSearch = localStorage.getItem('search');
+		var orgToSearch = localStorage.getItem('orgSearch');
+		var locationToSearch = localStorage.getItem('locationSearch');
+		
+		var tempEvents= myFirebase.child("allEvents");
+		
+		var searchRef = querybase.ref(tempEvents, ['organization', 'location']).where({
+				organization: orgToSearch,
+				// location: locationToSearch,
+		});
 
-		allEvents.orderByChild('organization').equalTo(toSearch).once('value',function(snapshot) 
+		searchRef.once('value',function(snapshot) 
 		{
 			var x = ' ';
 			var i = 0;	
@@ -182,7 +219,7 @@ $(window).load(function() {
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
-				       		 	"<p>" + obj.date + "</p>" +
+				       		 	"<p>" + date(obj.date) + "</p>" +
 				       		 "</div>" +
 
 				       		 "<div class='col-sm-8 title'>"+
@@ -190,7 +227,6 @@ $(window).load(function() {
 				       		 "</div>" +
 
 							"<div 'col-sm-2 share'>" +
-				         	 	"<a href='./createEvent.html'><button>Edit Event</button></a>" +
 				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 				       		 "</div>" +
 		       		 	"</div>"+
@@ -223,6 +259,10 @@ $(window).load(function() {
 			    i = i + 1;
 			});
 		});
+		// }	
+
 		localStorage.removeItem('search');
+		localStorage.removeItem('orgSearch');
+		localStorage.removeItem('locationSearch');	
 	}
 });

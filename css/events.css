@@ -5,7 +5,8 @@ events.css
 }
 
 .share {
-	text-align: right;
+	float: right;
+	align-self: right;
 	padding-top: 10px;
 	padding-right: 0px;
 }
@@ -14,11 +15,17 @@ events.css
 .event {
 	/* max-width: 85%; */
 	position: relative;
-	background-color: white;
+	background-color: rgb(250, 250, 250);
 	border:1px solid #B6B1A9;
+	border-radius: 5px;
 	/*should edit out later*/
 	/* padding-left:25px; */
 	/* margin-right: 10%; */
+}
+
+.event:hover {
+	background-color: white;
+
 }
 
 .date {
@@ -32,12 +39,17 @@ events.css
 	border-right: solid #595959;
 	border-bottom: solid #595959;
 	border-width: thin;
+	border-radius: 5px;
 	text-align: center;
 	justify-content: center;
 	font-size: 27px;
 	/* overflow: hidden; */
 	/* position: absolute; */
 }
+button {
+	border-radius: 3px;
+}
+
 
 .title {
 	font-weight: 525;

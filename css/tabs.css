@@ -13,7 +13,6 @@ body {
 
 /* Style the buttons inside the tab */
 .tab button {
-    display: block;
     background-color: inherit;
     border: none;
     outline: none;
@@ -21,16 +20,6 @@ body {
     padding: 20px;
     transition: 0.3s;
     font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab:hover {
-    opacity: 50%;
-}
-
-/* Create an active/current tablink class */
-.tab:active {
-    background-color: #ccc;
 }
 
 /* Style the tab content */
