@@ -23,3 +23,24 @@
 .index {
 	background-color: #00C6D7;
 }
+
+.tagrec {
+	border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 3px;
+    background-color: #36491d;
+    cursor: pointer;
+    padding: 3px;
+    margin-bottom: 2px;
+}
+
+#hello{
+	margin: 0px;
+}
+#recs{
+	padding-left: 10px;
+}

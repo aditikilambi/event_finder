@@ -13,6 +13,7 @@
       <link href="css/events.css" rel="stylesheet">
 
 
+
       <!--- Stylesheet for share icon -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -52,7 +53,9 @@
         
 
         <form id='searchbar' action='./upcoming.html'>
+          <br>
           <p>Filters: </p>
+          <br>
           <p><select id="Organization">    
             <option value="">Organization</option>
             <option value="Latin Club">Latin Club</option>
@@ -83,12 +86,17 @@
 
           <br><br><br><br>
 
-          <p>Search Event Tags: </p>
-          <p>Clickable example tags</p>
-          <p><input type="text" placeholder="&#xF002; Search for a tag" style="font-family:Arial, FontAwesome" /></p>
+          <p>Search Tags: </p>
+          <div id='recs'> 
+            <div class='tagrec' id='food' onclick="addTagFood()">food</div> 
+            <div class='tagrec' id='free' onclick="addTagFree()">free</div>
+            <div class='tagrec' id='academic' onclick="addTagAcademic()">academic</div>
+            <div class='tagrec' id='cultural' onclick="addTagCultural()">cultural</div>
+          </div>
+          <p><input id='tags' type="text" placeholder="&#xF002; Search for a tag" style="font-family:Arial, FontAwesome" /></p>
 
           <br><br><br><br>
-          
+
           <p id = 'submit'><input type="submit" value="Search"></p>
         </form>
       </div>
