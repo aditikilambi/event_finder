@@ -23,6 +23,7 @@
 
 .index {
 	background-color: #00C6D7;
+	min-height: 100%;
 }
 
 .tagrec {

@@ -7,7 +7,8 @@ body {
     display: flex;
     overflow: hidden;
     width: 100%;
-    align-content: center;
+    /* align-content: center; */
+    text-align: center;
 }
 
 
@@ -51,7 +52,6 @@ body {
     color: white;
     font-weight: bold;
 }
-
 
 /* Nav bar css */
 
