@@ -241,7 +241,9 @@ $(window).load(function() {
 					eventTypes: etypeToSearch,
 			});
 		}
-
+		else {
+			var searchRef = allEvents;
+		}
 
 		searchRef.once('value',function(snapshot) 
 		{
