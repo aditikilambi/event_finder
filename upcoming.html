@@ -33,7 +33,7 @@
       <script src="js/event.js"></script>
 
 
-      
+
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
@@ -50,21 +50,20 @@
         <div id='closeSearch'>
           <p><a href="javascript:void(0)"  onclick="closeNav(); onClick();">&times;</a></p>
         </div>
-        
+
 
         <form id='searchbar' action='./upcoming.html'>
           <br>
-          <p>Filters: </p>
-          <br>
-          <p><select id="Organization">    
+          <p style="color:white;">Filters:</p>
+          <p><select id="Organization">
             <option value="">Organization</option>
             <option value="Latin Club">Latin Club</option>
             <option value="Design Club">Design Club</option>
             <option value="Dance Club">Dance Club</option>
             <option value="Music Club">Music Club</option>
-          </select></p>         
+          </select></p>
 
-          <p><select id="eventTypeSearch">    
+          <p><select id="eventTypeSearch">
             <option value="">Event Category</option>
             <option value="art">Art</option>
             <option value="comedy">Comedy</option>
@@ -76,24 +75,28 @@
             <option value="other">Other</option>
           </select></p>
 
-          <br><br><br><br>
+          <p><select>
+            <option value="">Time</option>
+          </select></p>
 
-          <p>Search Tags: </p>
-          <div id='recs'> 
-            <div class='tagrec' id='food' onclick="addTagFood()">food</div> 
+          <br><br>
+
+          <p style="color:white;">Search Tags:</p>
+          <div id='recs'>
+            <div class='tagrec' id='food' onclick="addTagFood()">food</div>
             <div class='tagrec' id='free' onclick="addTagFree()">free</div>
             <div class='tagrec' id='academic' onclick="addTagAcademic()">academic</div>
             <div class='tagrec' id='cultural' onclick="addTagCultural()">cultural</div>
           </div>
           <p><input id='tags' type="text" placeholder="&#xF002; Search for a tag" style="font-family:Arial, FontAwesome" /></p>
 
-          <br><br><br><br>
+          <!-- <br><br><br><br> -->
 
-          <p id = 'submit'><input type="submit" value="Search"></p>
+          <p id = 'submit'><input type="submit" value="Search" style="color:black;"></p>
         </form>
       </div>
 
-      
+
       <!--  Making the My events, Upcoming, and create event tabs  -->
 
       <div class="tab">
@@ -105,22 +108,21 @@
       <!-- Placeholder Content --->
 
 
-    <div class = 'up'> 
+    <div class = 'up'>
       <br>
       <br>
       <br>
       <div id="allEventContent" class="show">
         <p>Loading Events ... </p>
       </div>
-    </div> 
+    </div>
     <!--    Importing Bootstrap Scripts    -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/tabs.js"></script>
     <!-- Removes preload class after webpage is opened -->
     <script>$(window).load(function() {
-      $("body").removeClass("preload");});</script>  
+      $("body").removeClass("preload");});</script>
     </div>
   </body>
 </html>
-

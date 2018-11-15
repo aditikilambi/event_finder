@@ -11,15 +11,23 @@
       <link href="css/tabs.css" rel="stylesheet">
       <link href="css/pageHeader.css" rel="stylesheet">
 
+      <!--test to get popover-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
       <!--- Stylesheet for share icon -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
 
-  <body style='background-color: gray'>
+  <body style='background-color: white'>
     <div class = 'jumbotron' id='pageHeader'>
       <h1>EventFinder</h1>
       <h3>Share with your friends!</h3>
+    </div>
+
+    <div>
+      <script src="js/share.js"></script>
     </div>
 
       <!-- Creation of side nav bar -->
@@ -31,7 +39,7 @@
         <a href='./upcoming.html'><button>Search</button></a>
       </div>
 
-      
+
       <!--  Making the My events, Upcoming, and create event tabs  -->
 
       <div class="tab">
@@ -54,6 +62,8 @@
         </p>
         <p><a href='./upcoming.html'>Back to Upcoming</a></p>
         <p><a href='./myEvents.html'>Back to My Events</a></p>
+        <!--works just need to customize-->
+        <!-- <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a> -->
       </div>
     </div>
     <!--    Importing Bootstrap Scripts    -->

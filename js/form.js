@@ -107,14 +107,14 @@ function date(dateString){
 
 /*  Method for populating myEvents Page with only events from the organization */
 $(window).load(function() {
-	allEvents.once('value',function(snapshot) 
+	allEvents.once('value',function(snapshot)
 	{
-		var x = ' ';	
+		var x = ' ';
 		var i = 0;
-		snapshot.forEach(function(snapshot) {	
+		snapshot.forEach(function(snapshot) {
 			var obj = snapshot.val();
 			if(obj.organization === "Latin Club") {
-					x = x + 
+					x = x +
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
@@ -125,8 +125,8 @@ $(window).load(function() {
 				       		 	"<p>" + obj.name + "</p>" +
 				       		 "</div>" +
 
-							"<div 'col-sm-2 share'>" +
-				         	 	"<a href='./createEvent.html'><button>Edit Event</button></a>" +
+							"<div class='share' style='padding: 15px; text-align: center;'>" +
+				         	 	"<a href='./createEvent.html'><button>Edit Event</button></a><br><br>" +
 				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 				       		 "</div>" +
 		       		 	"</div>"+
@@ -147,7 +147,7 @@ $(window).load(function() {
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 			            	"<p><button>see more</button></p>" +
 			              "</div>" +
-				       
+
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 				          	"<p><button>see less</button></p>" +
             			  "</div>" +
@@ -164,13 +164,13 @@ $(window).load(function() {
 
 $(window).load(function() {
 	if(localStorage.getItem('search') == null) {
-		allEvents.once('value',function(snapshot) 
+		allEvents.once('value',function(snapshot)
 		{
-			var x = ' ';	
+			var x = ' ';
 			var i = 0;
-			snapshot.forEach(function(snapshot) {	
+			snapshot.forEach(function(snapshot) {
 				var obj = snapshot.val();
-					x = x + 
+					x = x +
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
@@ -181,7 +181,7 @@ $(window).load(function() {
 				       		 	"<p>" + obj.name + "</p>" +
 				       		 "</div>" +
 
-							"<div 'col-sm-2 share'>" +
+							"<div class='share' style='padding: 15px; text-align: center;'>" +
 				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 				       		 "</div>" +
 		       		 	"</div>"+
@@ -202,7 +202,7 @@ $(window).load(function() {
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 			            	"<p><button>see more</button></p>" +
 			              "</div>" +
-				       
+
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 				          	"<p><button>see less</button></p>" +
             			  "</div>" +
@@ -221,9 +221,9 @@ $(window).load(function() {
 
 		var orgToSearch = localStorage.getItem('orgSearch');
 		var etypeToSearch = localStorage.getItem('type');
-		
+
 		var tempEvents= myFirebase.child("allEvents");
-		
+
 		if(orgToSearch != "" && etypeToSearch != ""){
 			console.log("Entered here");
 			var searchRef = querybase.ref(tempEvents, ['organization', 'eventTypes']).where({
@@ -245,13 +245,13 @@ $(window).load(function() {
 			var searchRef = allEvents;
 		}
 
-		searchRef.once('value',function(snapshot) 
+		searchRef.once('value',function(snapshot)
 		{
 			var x = ' ';
-			var i = 0;	
-			snapshot.forEach(function(snapshot) {	
+			var i = 0;
+			snapshot.forEach(function(snapshot) {
 				var obj = snapshot.val();
-					x = x + 
+					x = x +
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
@@ -262,7 +262,7 @@ $(window).load(function() {
 				       		 	"<p>" + obj.name + "</p>" +
 				       		 "</div>" +
 
-							"<div 'col-sm-2 share'>" +
+							"<div class='share' style='padding: 15px; text-align: center;'>" +
 				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 				       		 "</div>" +
 		       		 	"</div>"+
@@ -283,7 +283,7 @@ $(window).load(function() {
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 			            	"<p><button>see more</button></p>" +
 			              "</div>" +
-				       
+
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 				          	"<p><button>see less</button></p>" +
             			  "</div>" +
@@ -295,10 +295,10 @@ $(window).load(function() {
 			    i = i + 1;
 			});
 		});
-		// }	
+		// }
 
 		localStorage.removeItem('search');
 		localStorage.removeItem('orgSearch');
-		localStorage.removeItem('locationSearch');	
+		localStorage.removeItem('locationSearch');
 	}
 });

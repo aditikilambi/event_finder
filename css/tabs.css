@@ -77,10 +77,6 @@ body {
     transition: 0.3s;
 }
 
-.sidenav p:hover {
-    color: gray;
-}
-
 #closeSearch {
     float: right;
     padding-right: 20px;
@@ -112,7 +108,7 @@ body {
 }
 
 #openNav:hover{
-    color: blue;
+    color: grey;
     opacity: 50%;
 }
 
