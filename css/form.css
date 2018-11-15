@@ -30,22 +30,45 @@ textarea {
 }
 
 #eventName {
-	width: 50%;
+	width: 70%;
 }
 
 #description {
-	width: 50%;
+	width: 70%;
 	height: 100px;
 }
 
+#location {
+	width: 70%;
+}
+
 #long-description {
-	width: 50%;
+	width: 70%;
 	height: 200px;
 }
 
 #tags {
-	width: 50%;
+	width: 70%;
 	height: 50px;
+}
+
+.buttontags {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 3px;
+    background-color: #36491d;
+    cursor: pointer;
+    padding: 3px;
+    margin-bottom: 2px;
+}
+
+.buttontags:hover {
+	box-shadow: gray;
+	background-color: #1b250e;
 }
 
 /* necessary?

@@ -47,6 +47,22 @@ var addEvent = function () {
 
 };
 
+function addTagFood(){
+	document.getElementById('tags').value+="food ";
+}
+
+function addTagFree(){
+	document.getElementById('tags').value+="free ";
+}
+
+function addTagAcademic(){
+	document.getElementById('tags').value+="academic ";
+}
+
+function addTagCultural(){
+	document.getElementById('tags').value+="cultural ";
+}
+
 $(window).load(function() {
 	$('#addEventForm').submit(addEvent);
 });

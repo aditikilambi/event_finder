@@ -11,6 +11,8 @@
       <link href="css/tabs.css" rel="stylesheet">
       <link href="css/pageHeader.css" rel="stylesheet">
       <link href="css/form.css" rel="stylesheet">
+      <link href="css/events.css" rel="stylesheet">
+
       
 
       <!--- Stylesheet for share icon -->
@@ -26,6 +28,8 @@
   <body> 
     <!-- Load our form script file -->
     <script src="js/form.js"></script>
+    <script src="js/event.js"></script>
+
 
       <!--    Creating Page Header    -->
 
@@ -46,15 +50,25 @@
 
       <form id='addEventForm' action='./myEvents.html'>
 
-        <p><input id="eventName" placeholder="Event Name"></p>
+        <h2>Create a Latin Club Event</h2>
+
+
+        <h3><input id="eventName" placeholder="Event Name"></h3>
         
-        <p id='pic-upload'>Add an image<input type="file" name="eventPic"></p>
+        <br>
+
+        <h4>Add an image<p><input type="file" name="eventPic"></p>
+
+        <br>
         
-        <p>Date: <input id= 'date' type="date" placeholder="MM/DD/YYYY">  
+        <p>Date: <input id= 'date' type="date" placeholder="MM/DD/YYYY"></p>
+        <p>
           Start Time: <input id="start-time" type="time" name="appt-time"> 
           End Time: <input id="end-time" type="time" name="appt-time"></p>
 
         <p><input id='location' placeholder='Location of your Event'></p>
+
+        <br>
 
         <p><select id="eventType">    
           <option value="">Event Category</option>
@@ -68,11 +82,19 @@
           <option value="other">Other</option>
         </select></p>
         
-        <p><textarea id="description" placeholder="Give your event a catchy description"></textarea></p>
+        <p><textarea id="description" placeholder="Give your event a catchy description." maxlength="100"></textarea></p>
         
         <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
         
-        <p><textarea id="tags" placeholder="Event Tags, separated by a space. Try food dance networking"></textarea></p>
+        <p>Event Tags</p>
+
+        <div class='recTags'> Recommended: 
+          <div class='buttontags' id='food' onclick="addTagFood()">food</div>
+          <div class='buttontags' id='free' onclick="addTagFree()">free</div>
+          <div class='buttontags' id='academic' onclick="addTagAcademic()">academic</div>
+          <div class='buttontags' id='cultural' onclick="addTagCultural()">cultural</div>
+        </div>
+        <p><textarea id="tags" placeholder="Event Tags, separated by a space"></textarea></p>
 
         <p id = 'submit'><input type="submit" value="Create Event"></p>
       

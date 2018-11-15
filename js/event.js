@@ -9,3 +9,4 @@ function clickItBack(i){
   document.getElementById('seeless' + i).className = "dontShow";
   document.getElementById('longBoi' + i).className = "dontShow";
 }
+
