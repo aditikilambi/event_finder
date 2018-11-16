@@ -111,7 +111,7 @@ $(window).load(function() {
 		snapshot.forEach(function(snapshot) {	
 			var obj = snapshot.val();
 			var key = snapshot.key;
-			if(obj.organization === "Latin Club") {
+			if(obj.organization === "Latin Club") {	
 					x = x + 
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
@@ -136,7 +136,7 @@ $(window).load(function() {
 			        	 "<div class='col-sm-9 description'>"+
 
 			        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
-			        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
+			        	 	"<p> <strong>Organization:</strong> <a data-toggle='modal' href='#clubModal'>" + obj.organization + "</a></p>" +
 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
 			        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
