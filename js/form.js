@@ -1,4 +1,3 @@
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyDHQWb-9NmoPuKRzAwt9Tja7FNEyYECQnU",
@@ -44,7 +43,10 @@ var addEvent = function () {
 		"eventTypes": eventType,
 	});
 
-
+	// if(localStorage.getItem('keyToRemove') != null){
+	// 	allEvents.child(localStorage.getItem('keyToRemove')).remove();
+	// 	localStorage.removeItem('keyToRemove');
+	// }
 };
 
 function addTagFood(){
@@ -100,21 +102,17 @@ function date(dateString){
 	return returnMonth + '   ' + dateString.substring(8,10);
 }
 
-
-// function time(start, end){
-
-// }
-
 /*  Method for populating myEvents Page with only events from the organization */
 $(window).load(function() {
-	allEvents.once('value',function(snapshot)
+	allEvents.once('value',function(snapshot) 
 	{
-		var x = ' ';
+		var x = ' ';	
 		var i = 0;
-		snapshot.forEach(function(snapshot) {
+		snapshot.forEach(function(snapshot) {	
 			var obj = snapshot.val();
+			var key = snapshot.key;
 			if(obj.organization === "Latin Club") {
-					x = x +
+					x = x + 
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
@@ -126,9 +124,9 @@ $(window).load(function() {
 				       		 "</div>" +
 
 							"<div class='share' style='padding: 15px; text-align: center;'>" +
-				         	 	"<a href='./createEvent.html'><button>Edit Event</button></a><br><br>" +
+				         	 	"<a href='editEvent.html' id='" + key + "'onclick='editEvent(this.id);'><button class='edit'>Edit Event</button></a><br><br>" +
 				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
-				       		 "</div>" +
+				       		"</div>" +
 		       		 	"</div>"+
 
 			       		 "<div class='col-sm-3' id='eventimage'>" +
@@ -139,7 +137,7 @@ $(window).load(function() {
 
 			        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
 			        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
-			        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
+			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
 			        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
 
@@ -147,7 +145,7 @@ $(window).load(function() {
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 			            	"<p><button>see more</button></p>" +
 			              "</div>" +
-
+				       
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 				          	"<p><button>see less</button></p>" +
             			  "</div>" +
@@ -161,16 +159,36 @@ $(window).load(function() {
 	});
 });
 
+function editEvent(key){
+	localStorage.setItem('keyToRemove', key);
+	var keyRef = myFirebase.child('allEvents').child(key).once('value',function(snapshot) {
+		var obj = snapshot.val();
+		var toEdit = JSON.stringify({
+			name: obj.name,
+			date: obj.date,
+			startTime: obj.startTime,
+			endTime: obj.endTime,
+			description: obj.description,
+			longboi: obj.longDes,
+			location: obj.location
+		});
+		localStorage.setItem('editEvent', toEdit);
+		var toRetrieve = JSON.parse(localStorage.getItem('editEvent'));
+		console.log(toRetrieve.date);
+
+	});
+}
+
 
 $(window).load(function() {
 	if(localStorage.getItem('search') == null) {
-		allEvents.once('value',function(snapshot)
+		allEvents.once('value',function(snapshot) 
 		{
-			var x = ' ';
+			var x = ' ';	
 			var i = 0;
-			snapshot.forEach(function(snapshot) {
+			snapshot.forEach(function(snapshot) {	
 				var obj = snapshot.val();
-					x = x +
+					x = x + 
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
@@ -194,7 +212,7 @@ $(window).load(function() {
 
 			        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
 			        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
-			        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
+			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
 			        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
 
@@ -202,7 +220,7 @@ $(window).load(function() {
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 			            	"<p><button>see more</button></p>" +
 			              "</div>" +
-
+				       
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 				          	"<p><button>see less</button></p>" +
             			  "</div>" +
@@ -217,13 +235,15 @@ $(window).load(function() {
 });
 
 $(window).load(function() {
+	var cool = 'hello';
+
 	if(localStorage.getItem('search')) {
 
 		var orgToSearch = localStorage.getItem('orgSearch');
 		var etypeToSearch = localStorage.getItem('type');
-
+		
 		var tempEvents= myFirebase.child("allEvents");
-
+		
 		if(orgToSearch != "" && etypeToSearch != ""){
 			console.log("Entered here");
 			var searchRef = querybase.ref(tempEvents, ['organization', 'eventTypes']).where({
@@ -245,13 +265,14 @@ $(window).load(function() {
 			var searchRef = allEvents;
 		}
 
-		searchRef.once('value',function(snapshot)
+		searchRef.once('value',function(snapshot) 
 		{
+			console.log(cool);
 			var x = ' ';
-			var i = 0;
-			snapshot.forEach(function(snapshot) {
+			var i = 0;	
+			snapshot.forEach(function(snapshot) {	
 				var obj = snapshot.val();
-					x = x +
+					x = x + 
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
@@ -283,7 +304,7 @@ $(window).load(function() {
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 			            	"<p><button>see more</button></p>" +
 			              "</div>" +
-
+				       
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 				          	"<p><button>see less</button></p>" +
             			  "</div>" +
@@ -294,11 +315,13 @@ $(window).load(function() {
 			 	document.getElementById('allEventContent').innerHTML = x;
 			    i = i + 1;
 			});
-		});
-		// }
 
+		});
+		// }	
 		localStorage.removeItem('search');
 		localStorage.removeItem('orgSearch');
-		localStorage.removeItem('locationSearch');
+		localStorage.removeItem('locationSearch');	
 	}
+
 });
+
