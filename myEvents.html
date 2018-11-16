@@ -11,6 +11,8 @@
       <link href="css/tabs.css" rel="stylesheet">
       <link href="css/pageHeader.css" rel="stylesheet">
       <link href="css/events.css" rel="stylesheet">
+      <link href="css/modal.css" rel="stylesheet">
+
 
       <!--- Stylesheet for share icon -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,23 +21,44 @@
       <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
       <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
       <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
 <body>
 
-  <div id="main">
+  <script src="js/login.js"></script>      
+  <!-- 
+  <button><a href='#' data-trigger='hover' data-toggle='popover' title='Share' data-html='true' data-placement='bottom'><i class='fa fa-share-alt' style='font-size:24px'></i></button></a>
+ -->
+  <script>
+        console.log(localStorage.getItem('firstTime') === 'true');
+        if(localStorage.getItem('firstTime') === 'true') window.alert("Logged In!");
+        localStorage.setItem('firstTime', 'false');
+  </script>
+
+
+
+  <div id="main" ='showAlert()'>
 
       <!-- Load our form script file -->
       <script src="js/form.js"></script>
       <script src="js/event.js"></script>
+      <script src="js/share.js"></script>
 
 
+<!--       <div id='loginconf'>
+        <p>logged in</p>
+      </div>
+ -->
       <!--    Creating Page Header    -->
       <div class = 'jumbotron' id='pageHeader'>
         <div id = "openNav" class='hide' onclick="openNav()"><i class="fa fa-search"></i></div>
         <h1>EventFinder</h1>
         <h3>Welcome back, Latin Club</h3>
       </div>
+
+
+
       <!-- Creation of side nav bar -->
 
       <div id="mySidenav" class="sidenav">
@@ -66,10 +89,6 @@
             <option value="networking">Networking</option>
             <option value="party">Party</option>
             <option value="other">Other</option>
-          </select></p>
-
-          <p><select>
-            <option value="">Time</option>
           </select></p>
 
           <br><br>
@@ -119,7 +138,7 @@
       <div class = "container-fluid">
       <div class = "row">
       <div class = "jumbotron" id= "orgname">
-      <img src = "images/melanie-van-leeuwen-83771-unsplash.jpg" alt= "orgimage">
+      <img id='imageeee' src = "images/latin.jpg" alt= "orgimage">
       <h2>Latin Club</h2>
       </div>
       </div>
@@ -144,10 +163,10 @@
       <div class = "col-lg-6">
       <div class = "panel panel-default">
       <div class = "panel-heading">
-        More Info
+        Club Contact Info
       </div>
       <div class = "panel-body">
-        One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.
+        <p>President: JK Rowling jrowling@ucsd.edu</p>
       </div>
       </div>
       </div>
@@ -157,10 +176,10 @@
         Social Media
       </div>
       <div class = "panel-body">
-      <a href="#" class="fa fa-facebook fa-2x"></a>
-      <a href="#" class="fa fa-instagram fa-2x"></a>
-      <a href="#" class="fa fa-snapchat-ghost fa-2x"></a>
-      <a href="#" class="fa fa-google fa-2x"></a>
+      <a href="http://facebook.com" id = 'hello' class="fa fa-facebook fa-2x"></a>
+      <a href="http://instagram.com" id = 'hello' class="fa fa-instagram fa-2x"></a>
+      <a href="http://snapchat.com" id = 'hello' class="fa fa-snapchat-ghost fa-2x"></a>
+      <a href="http://gmail.com" id = 'hello' class="fa fa-google fa-2x"></a>
       </div>
       </div>
       </div>
@@ -172,8 +191,6 @@
       </div>
       </div>
       </div>
-
-
 
 
       <br>

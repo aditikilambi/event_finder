@@ -16,13 +16,18 @@
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   </head>
+
   <body>
+      <script src="js/login.js"></script>
+      <script>
+        localStorage.setItem('firstTime', 'true');
+      </script>
       <div class = 'jumbotron' id='pageHeader'>
         <h1>EventFinder</h1>
         <h3>Login</h3>
       </div>
         <div id="container">
-        <form action="./myEvents.html" method="post">
+        <form onSubmit="return logIn();" method="post" action='./myEvents.html'>
             <label for="username">
                 Username:
             </label>
@@ -39,3 +44,4 @@
 
   </body>
 </html>
+<!-- action='./myEvents.html' -->

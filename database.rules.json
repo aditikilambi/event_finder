@@ -1,11 +1,6 @@
-// These rules give anyone, even people who are not users of your app,
-// read and write access to your database
 {
   "rules": {
-    ".read": true,
-    ".write": true,
-  	"addEvents": {
-    	".indexOn": ["date", "start-time"]
-    }
+    ".read": "auth != null",
+    ".write": "auth != null"
   }
 }

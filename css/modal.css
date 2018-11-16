@@ -1,0 +1,48 @@
+.jumbotron{
+   background-color: white;
+}
+
+#orgname{
+   text-align: center;
+
+}
+
+#imageeee{
+   border-radius: 50%;
+   width: 400px;
+}
+
+/* Styling Social Media buttons */
+#hello {
+   padding: 20px;
+   font-size: 100px;
+   width: 5%;
+   text-align: center;
+   text-decoration: none;
+   margin: 5px 2px;
+ }
+
+ .fa:hover {
+     opacity: 0.8;
+ }
+
+ .fa-facebook {
+   background: #3B5998;
+   color: white;
+ }
+
+.fa-instagram {
+   background: #125688;
+   color: white;
+ }
+
+.fa-snapchat-ghost {
+   background: #fffc00;
+   color: white;
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+ }
+
+.fa-google {
+   background: #dd4b39;
+   color: white;
+ }
