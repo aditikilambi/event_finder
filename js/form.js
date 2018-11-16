@@ -102,6 +102,7 @@ function date(dateString){
 	return returnMonth + '   ' + dateString.substring(8,10);
 }
 
+
 /*  Method for populating myEvents Page with only events from the organization */
 $(window).load(function() {
 	allEvents.once('value',function(snapshot) 
@@ -125,8 +126,7 @@ $(window).load(function() {
 
 							"<div class='share' style='padding: 15px; text-align: center;'>" +
 				         	 	"<a href='editEvent.html' id='" + key + "'onclick='editEvent(this.id);'><button class='edit'>Edit Event</button></a><br><br>" +
-				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
-				       		"</div>" +
+							"</div>" +
 		       		 	"</div>"+
 
 			       		 "<div class='col-sm-3' id='eventimage'>" +
@@ -200,7 +200,6 @@ $(window).load(function() {
 				       		 "</div>" +
 
 							"<div class='share' style='padding: 15px; text-align: center;'>" +
-				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 				       		 "</div>" +
 		       		 	"</div>"+
 
@@ -284,7 +283,6 @@ $(window).load(function() {
 				       		 "</div>" +
 
 							"<div class='share' style='padding: 15px; text-align: center;'>" +
-				         	 	"<a href='./share.html'><button>" + "<i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 				       		 "</div>" +
 		       		 	"</div>"+
 
@@ -325,3 +323,42 @@ $(window).load(function() {
 
 });
 
+
+// "<div class='container event'>" +
+// 		          		"<div class='row'>" +
+// 				            "<div class='col-sm-3 date'>" +
+// 				       		 	"<p>" + date(obj.date) + "</p>" +
+// 				       		 "</div>" +
+
+// 				       		 "<div class='col-sm-8 title'>"+
+// 				       		 	"<p>" + obj.name + "</p>" +
+// 				       		 "</div>" +
+
+// 							"<div class='share' style='padding: 15px; text-align: center;'>" +
+// 				         	 	"<a href='editEvent.html' id='" + key + "'onclick='editEvent(this.id);'><button class='edit'>Edit Event</button></a><br><br>" +
+// 								 "<button><a href='#' data-trigger='hover' data-toggle='popover' title='Share' data-html='true' data-placement='bottom' data-content=" + getContent() + "><i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +     		
+// 							"</div>" +
+// 		       		 	"</div>"+
+
+// 			       		 "<div class='col-sm-3' id='eventimage'>" +
+// 			          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+// 			        	 "</div>" +
+
+// 			        	 "<div class='col-sm-9 description'>"+
+
+// 			        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
+// 			        	 	"<p> <strong>Organization:</strong> <a data-toggle='modal' href='#clubModal'>" + obj.organization + "</a></p>" +
+// 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
+// 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
+// 			        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
+
+
+// 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
+// 			            	"<p><button>see more</button></p>" +
+// 			              "</div>" +
+				       
+// 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
+// 				          	"<p><button>see less</button></p>" +
+//             			  "</div>" +
+// 			              "</div>" +
+// 		              "</div> <br><br><br>";
