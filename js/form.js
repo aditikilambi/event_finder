@@ -13,9 +13,9 @@ firebase.initializeApp(config);
 
 var myFirebase = firebase.database().ref();
 
-var allEvents = myFirebase.child("allEvents").orderByChild("date");
+var allEvents = myFirebase.child("allEvents");
 
-var addEvent = function () {
+var addEvents = function () {
 	var name = $("#eventName").val();
 	var organization = "Latin Club";
 	var pic = $("#pic-upload").val();
@@ -26,8 +26,6 @@ var addEvent = function () {
 	var description = $("#description").val();
 	var longd = $("#long-description").val();
 	var tags = $("#tags").val().split(" ");
-	var eventType = $( "#eventType option:selected" ).val();
-
 
 	allEvents.push({
 		"name": name,
@@ -40,13 +38,8 @@ var addEvent = function () {
 		"description": description,
 		"longDes": longd,
 		"tags": tags,
-		"eventTypes": eventType,
 	});
 
-	// if(localStorage.getItem('keyToRemove') != null){
-	// 	allEvents.child(localStorage.getItem('keyToRemove')).remove();
-	// 	localStorage.removeItem('keyToRemove');
-	// }
 };
 
 function addTagFood(){
@@ -66,7 +59,7 @@ function addTagCultural(){
 }
 
 $(window).load(function() {
-	$('#addEventForm').submit(addEvent);
+	$('#addEventForm').submit(addEvents);
 });
 
 
