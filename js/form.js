@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 
 var myFirebase = firebase.database().ref();
 
-var allEvents = myFirebase.child("allEvents");
+var allEvents = myFirebase.child("allEvents").orderByChild("date");
 
 var addEvents = function () {
 	var name = $("#eventName").val();
@@ -153,7 +153,6 @@ $(window).load(function() {
 });
 
 function editEvent(key){
-	localStorage.setItem('keyToRemove', key);
 	var keyRef = myFirebase.child('allEvents').child(key).once('value',function(snapshot) {
 		var obj = snapshot.val();
 		var toEdit = JSON.stringify({
@@ -166,9 +165,6 @@ function editEvent(key){
 			location: obj.location
 		});
 		localStorage.setItem('editEvent', toEdit);
-		var toRetrieve = JSON.parse(localStorage.getItem('editEvent'));
-		console.log(toRetrieve.date);
-
 	});
 }
 
