@@ -93,14 +93,20 @@
 
           <br><br>
 
-          <p style="color:white;">Search Tags:</p>
-          <div id='recs'>
-            <div class='tagrec' id='food' onclick="addTagFood()">food</div>
-            <div class='tagrec' id='free' onclick="addTagFree()">free</div>
-            <div class='tagrec' id='academic' onclick="addTagAcademic()">academic</div>
-            <div class='tagrec' id='cultural' onclick="addTagCultural()">cultural</div>
-          </div>
           <p><input id='tags' type="text" placeholder="&#xF002; Search for a tag" style="font-family:Arial, FontAwesome" /></p>
+          <div id='recs'>
+            <div class='tagrec' id='food' onclick="searchTag(this.id)">food</div>     
+            <div class='tagrec' id='fun' onclick="searchTag(this.id)">fun</div>
+            <div class='tagrec' id='free' onclick="searchTag(this.id)">free</div>
+            <div class='tagrec' id='paid' onclick="searchTag(this.id)">paid</div>
+            <div class='tagrec' id='academic' onclick="searchTag(this.id)">academic</div>
+            <div class='tagrec' id='gbm' onclick="searchTag(this.id)">gbm</div>
+            <div class='tagrec' id='jobs' onclick="searchTag(this.id)">jobs</div>
+            <div class='tagrec' id='dinner' onclick="searchTag(this.id)">dinner</div>
+            <div class='tagrec' id='greek' onclick="searchTag(this.id)">greek</div>
+            <div class='tagrec' id='cultural' onclick="searchTag(this.id)">cultural</div>
+          </div>
+
 
           <!-- <br><br><br><br> -->
 
@@ -125,10 +131,11 @@
       <br>
 
       <div id='myEventContent'>
-        <p style="font-size: 24px; padding: 0 5%;">Looks like you don't have any events.  Click <a href='/createEvent'>Create Event</a> to get started. </p>
-      </div>
+        <img class='loading' src='./images/blueload.gif'>
+      </div><!-- 
 
-      <div class = "modal fade" id="clubModal">
+      <p style="font-size: 24px; padding: 0 5%;">Looks like you don't have any events.  Click <a href='/createEvent'>Create Event</a> to get started. </p>
+ -->      <div class = "modal fade" id="clubModal">
       <div class = "modal-dialog modal-lg">
       <div class = "modal-content">
       <div class = "modal-header">

@@ -110,15 +110,26 @@ body {
 #openNav:hover{
     color: grey;
     opacity: 50%;
+    cursor: pointer;
 }
 
 input {
-    width: 200px;
+
     color: #B6B1A9;
+    margin: 0 auto;
+
 }
 
 select {
     width: 200px;
+}
+
+#recs {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
 }
 
 #main {

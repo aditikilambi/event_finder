@@ -30,11 +30,6 @@
     <script src="js/form.js"></script>
     <script src="js/event.js"></script>
 
-    <script>
-      function removeGET(){
-
-      }
-    </script>
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
@@ -92,10 +87,16 @@
         <p>Event Tags</p>
 
         <div class='recTags'> Recommended: 
-          <div class='buttontags' id='food' onclick="addTagFood()">food</div>
-          <div class='buttontags' id='free' onclick="addTagFree()">free</div>
-          <div class='buttontags' id='academic' onclick="addTagAcademic()">academic</div>
-          <div class='buttontags' id='cultural' onclick="addTagCultural()">cultural</div>
+          <div class='buttontags' id='food' onclick="addTag(this.id)">food</div>     
+          <div class='buttontags' id='fun' onclick="addTag(this.id)">fun</div>
+          <div class='buttontags' id='free' onclick="addTag(this.id)">free</div>
+          <div class='buttontags' id='paid' onclick="addTag(this.id)">paid</div>
+          <div class='buttontags' id='academic' onclick="addTag(this.id)">academic</div>
+          <div class='buttontags' id='gbm' onclick="addTag(this.id)">gbm</div>
+          <div class='buttontags' id='jobs' onclick="addTag(this.id)">jobs</div>
+          <div class='buttontags' id='dinner' onclick="addTag(this.id)">dinner</div>
+          <div class='buttontags' id='greek' onclick="addTag(this.id)">greek</div>
+          <div class='buttontags' id='cultural' onclick="addTag(this.id)">cultural</div>
         </div>
 
         <p><textarea id="tags" placeholder="Event Tags, separated by a space"></textarea></p>

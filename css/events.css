@@ -14,7 +14,7 @@
 .event {
 	/* max-width: 85%; */
 	position: relative;
-	background-color: rgb(250, 250, 250);
+	background-color: rgb(240, 240, 240);
 	border:1px solid #B6B1A9;
 	border-radius: 5px;
 	/*should edit out later*/
@@ -24,7 +24,6 @@
 
 .event:hover {
 	background-color: white;
-
 }
 
 .date {
@@ -51,6 +50,11 @@ button {
 	border-radius: 3px;
 }
 
+
+.loading {
+	display: block;
+	margin: 0 auto;
+}
 
 
 .title {

@@ -44,20 +44,12 @@ var addEvents = function () {
 
 };
 
-function addTagFood(){
-	document.getElementById('tags').value+="food ";
+function addTag(id){
+	document.getElementById('tags').value+= id + " ";
 }
 
-function addTagFree(){
-	document.getElementById('tags').value+="free ";
-}
-
-function addTagAcademic(){
-	document.getElementById('tags').value+="academic ";
-}
-
-function addTagCultural(){
-	document.getElementById('tags').value+="cultural ";
+function searchTag(id){
+	document.getElementById('tags').value = id;
 }
 
 $(window).load(function() {
@@ -99,6 +91,25 @@ function date(dateString){
 	return returnMonth + '   ' + dateString.substring(8,10);
 }
 
+function time(timeString){
+	var timeArray = timeString.split(':');
+	var hours = Number(timeArray[0]);
+	var minutes = timeArray[1];
+	var amopm = '';
+	if(hours == 0) {
+		hours  = 12;
+		amopm = 'AM';
+	}
+	else if(hours >= 12){
+		hours = hours - 12;
+		amopm = 'PM';
+	}
+	else {
+		amopm = 'AM'
+	}
+
+	return hours + ':' + minutes + ' ' + amopm;
+}
 
 /*  Method for populating myEvents Page with only events from the organization */
 $(window).load(function() {
@@ -133,7 +144,7 @@ $(window).load(function() {
 
 			        	 "<div class='col-sm-9 description'>"+
 
-			        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
+			        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
 			        	 	"<p> <strong>Organization:</strong> <a data-toggle='modal' href='#clubModal'>" + obj.organization + "</a></p>" +
 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
@@ -203,7 +214,7 @@ $(window).load(function() {
 
 			        	 "<div class='col-sm-9 description'>"+
 
-			        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
+			        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
 			        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
@@ -292,7 +303,7 @@ $(window).load(function() {
 
 					        	 "<div class='col-sm-9 description'>"+
 
-					        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
+					        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
 					        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 					        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
 					        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
@@ -342,7 +353,7 @@ $(window).load(function() {
 
 					        	 "<div class='col-sm-9 description'>"+
 
-					        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
+					        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
 					        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 					        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
 					        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
@@ -366,6 +377,8 @@ $(window).load(function() {
 					}
 				});
 			}
+			if(i == 0) document.getElementById('allEventContent').innerHTML = "<p style='font-size: 24px; padding: 0 5%;''> No events apply to that search. Try again!  </p>";
+
 		});
 
 	}
