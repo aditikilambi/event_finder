@@ -3,6 +3,7 @@ form {
 	background-color: #6E963B;
 	padding-top: 40px;
 	padding-bottom: 40px;
+	padding-right: 20%;
 	margin: 0;
 }
 
@@ -24,11 +25,10 @@ textarea {
   color: #B6B1A9;
 }
 
-
-
-#eventName {
-	width: 70%;
+.form-group {
+	margin-left: 0;
 }
+
 
 #description {
 	width: 70%;

@@ -31,8 +31,12 @@
   <button><a href='#' data-trigger='hover' data-toggle='popover' title='Share' data-html='true' data-placement='bottom'><i class='fa fa-share-alt' style='font-size:24px'></i></button></a>
  -->
   <script>
-        console.log(localStorage.getItem('firstTime') === 'true');
-        if(localStorage.getItem('firstTime') === 'true') window.alert("Logged In!");
+        if(localStorage.getItem('firstTime') === 'true') {
+          $(document).ready(function () {
+            window.alert("Logged In!");
+            document.getElementById('homeScreen').innerHTML = 'Welcome back, Latin Club';
+          });
+        }
         localStorage.setItem('firstTime', 'false');
   </script>
 
@@ -54,7 +58,7 @@
       <div class = 'jumbotron' id='pageHeader'>
         <div id = "openNav" class='hide' onclick="openNav()"><i class="fa fa-search"></i></div>
         <h1>EventFinder</h1>
-        <h3>Welcome back, Latin Club</h3>
+        <h3 id = 'homeScreen' >Home</h3>
       </div>
 
 

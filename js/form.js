@@ -270,10 +270,22 @@ $(window).load(function() {
 
 		console.log(orgToSearch + '.' + etypeToSearch + '.' + localStorage.getItem('tags'));
 
+		if (orgToSearch == '') orgToSearch = 'Any organization';
+		if (etypeToSearch == '') etypeToSearch = 'Any category';
+		if (localStorage.getItem('tags') == '') var tagstring = 'Any tags';
+
 
 		searchRef.once('value',function(snapshot) 
 		{
-			var x = ' ';
+
+			var orgString = localStorage.getItem('orgSearch') == '' ? '' : localStorage.getItem('orgSearch');
+			var typeString = localStorage.getItem('type') == '' ? '' : localStorage.getItem('type');
+			var tagstring = localStorage.getItem('tags') == '' ? '' : localStorage.getItem('tags');
+
+			var cool =  '<strong>Searching for:</strong> '  + orgString + ' '  + typeString + ' '  + tagstring;
+			document.getElementById('searchEventsCover').innerHTML = cool;
+
+			var x = '';
 			var i = 0;	
 			
 			if(!both){

@@ -39,7 +39,7 @@
       <div class = 'jumbotron' id='pageHeader'>
         <div id = "openNav" class='hide' onclick="openNav()"><i class="fa fa-search"></i></div>
         <h1>EventFinder</h1>
-        <h3>Search All Events</h3>
+        <h3 id ='searchEventsCover'>Search All Events</h3>
       </div>
 
       <!-- Creation of side nav bar -->
@@ -54,7 +54,7 @@
 
         <form id='searchbar' action='./upcoming.html'>
           <br>
-          <p style="color:white;">Filters:</p>
+          <p style="color:white;">Filter and Search</p>
           <p><select id="Organization">
             <option value="">Organization</option>
             <option value="Latin Club">Latin Club</option>
@@ -118,7 +118,7 @@
       <div id="allEventContent" class="show">
         <img class='loading' src='./images/yellowLoad.gif'>
       </div>
-      
+
     </div>
     <!--    Importing Bootstrap Scripts    -->
     <script src="https://code.jquery.com/jquery.js"></script>

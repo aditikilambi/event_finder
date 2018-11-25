@@ -23,6 +23,18 @@
       <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
       <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+
+
+      <script src="js/tabs.js"></script>
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+
+
   </head>
 
   <body> 
@@ -30,6 +42,11 @@
     <script src="js/form.js"></script>
     <script src="js/event.js"></script>
 
+<!--     <script>
+      $('#openNav').bind('beforeUnload', function(){
+        return 'Are you sure you want to leave?';
+      });
+    </script> -->
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
@@ -47,12 +64,15 @@
 
     <div id = 'form'>
 
+
       <form id='addEventForm' action='./myEvents.html'>
 
         <h2>Create a Latin Club Event</h2>
-
-
-        <h3><input id="eventName" placeholder="Event Name"></h3>
+        <br>
+        <div class='form-group'>
+          <label for="eventName">Event Title</label>
+          <input id="eventName" class="form-control form-control-lg" type="text" placeholder="Enter an Event Name">
+        </div>
         
         <br>
 
@@ -60,9 +80,17 @@
 
         <br>
         
-        <p>Date: <input id= 'date' type="date" placeholder="MM/DD/YYYY"> <br><br>  
-        Start Time: <input id="start-time" type="time"> 
-        End Time: <input id="end-time" type="time"></p>
+        <div class='form-group'>
+          <input id= 'date' type="date" placeholder="MM/DD/YYYY">
+        </div>
+
+        <div class='form-group'>
+          <label for='start-time'>Start time</label>
+          <input id="start-time" type="time">
+          <label for='end-time'>End time</label>
+          <input id="end-time" type="time"></p>
+        </div>        
+       
 
         <p><input id='location' placeholder='Location of your Event'></p>
 
@@ -106,14 +134,6 @@
       </form>
 
     </div>
-
-
-    <!--    Importing Bootstrap Scripts    -->    
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/tabs.js"></script>
-
    
   </body>
 </html>
