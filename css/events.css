@@ -10,6 +10,11 @@
 	padding-right: 0px;
 }
 
+.orgbutton {
+	padding-left: 60px;
+	padding-top: 30px;
+}
+
 /*added to make page content in line with header*/
 .event {
 	/* max-width: 85%; */

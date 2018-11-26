@@ -42,6 +42,8 @@ var addEvents = function () {
 		"eventTypes": eventType,
 	});
 
+	localStorage.setItem("eventcreate", true);
+
 };
 
 function addTag(id){
@@ -56,6 +58,13 @@ $(window).load(function() {
 	$('#addEventForm').submit(addEvents);
 });
 
+function parseString(toParse) {
+	return toParse.split(" ")[0];
+}
+
+function randomImage() {
+
+}
 
 var searchterms = function() {
 	var organization = $( "#Organization option:selected" ).val();
@@ -140,12 +149,13 @@ $(window).load(function() {
 
 			       		 "<div class='col-sm-3' id='eventimage'>" +
 			          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+			          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
 			        	 "</div>" +
 
 			        	 "<div class='col-sm-9 description'>"+
 
 			        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
-			        	 	"<p> <strong>Organization:</strong> <a data-toggle='modal' href='#clubModal'>" + obj.organization + "</a></p>" +
+			        	 	"<p> <strong>Organization: </strong>" + obj.organization + "</a></p>" +
 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
 			        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
@@ -210,6 +220,7 @@ $(window).load(function() {
 
 			       		 "<div class='col-sm-3' id='eventimage'>" +
 			          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+			          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
 			        	 "</div>" +
 
 			        	 "<div class='col-sm-9 description'>"+
@@ -311,6 +322,7 @@ $(window).load(function() {
 
 					       		 "<div class='col-sm-3' id='eventimage'>" +
 					          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+					          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
 					        	 "</div>" +
 
 					        	 "<div class='col-sm-9 description'>"+
@@ -361,6 +373,7 @@ $(window).load(function() {
 
 					       		 "<div class='col-sm-3' id='eventimage'>" +
 					          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+					          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
 					        	 "</div>" +
 
 					        	 "<div class='col-sm-9 description'>"+

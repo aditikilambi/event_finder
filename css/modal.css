@@ -8,18 +8,17 @@
 }
 
 #imageeee{
-   border-radius: 50%;
-   width: 400px;
+   width: 300px;
 }
 
 /* Styling Social Media buttons */
 #hello {
    padding: 20px;
-   font-size: 100px;
+/*   font-size: 100px;
    width: 5%;
    text-align: center;
    text-decoration: none;
-   margin: 5px 2px;
+   margin: 5px 2px;*/
  }
 
  .fa:hover {
