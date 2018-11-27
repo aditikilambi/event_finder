@@ -18,7 +18,6 @@ var allEvents = myFirebase.child("allEvents");
 var addEvents = function () {
 	var name = $("#eventName").val();
 	var organization = "Latin Club";
-	var pic = $("#pic-upload").val();
 	var date = $("#date").val();
 	var location = $("#location").val();
 	var startTime = $("#start-time").val();
@@ -27,11 +26,11 @@ var addEvents = function () {
 	var longd = $("#long-description").val();
 	var tags = $("#tags").val().split(" ");
 	var eventType = $("#eventType option:selected").val();
+	var imageURL = "./images/imageSenior.jpg";
 
 	allEvents.push({
 		"name": name,
 		"organization": organization,
-		"picture": pic,
 		"date": date,
 		"location": location,
 		"startTime": startTime,
@@ -40,6 +39,7 @@ var addEvents = function () {
 		"longDes": longd,
 		"tags": tags,
 		"eventTypes": eventType,
+		"imageURL" : imageURL,
 	});
 
 	localStorage.setItem("eventcreate", true);
@@ -62,9 +62,6 @@ function parseString(toParse) {
 	return toParse.split(" ")[0];
 }
 
-function randomImage() {
-
-}
 
 var searchterms = function() {
 	var organization = $( "#Organization option:selected" ).val();
@@ -148,7 +145,7 @@ $(window).load(function() {
 		       		 	"</div>"+
 
 			       		 "<div class='col-sm-3' id='eventimage'>" +
-			          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+			          		"<img class='img-responsive crop' src='" + obj.imageURL + "'/>" +
 			          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
 			        	 "</div>" +
 
@@ -219,7 +216,7 @@ $(window).load(function() {
 		       		 	"</div>"+
 
 			       		 "<div class='col-sm-3' id='eventimage'>" +
-			          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+			          		"<img class='img-responsive crop' src='" + obj.imageURL + "'/>" +
 			          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
 			        	 "</div>" +
 
@@ -321,7 +318,7 @@ $(window).load(function() {
 				       		 	"</div>"+
 
 					       		 "<div class='col-sm-3' id='eventimage'>" +
-					          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+					          		"<img class='img-responsive crop' src='" + obj.imageURL + "'/>" +
 					          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
 					        	 "</div>" +
 
@@ -372,7 +369,7 @@ $(window).load(function() {
 				       		 	"</div>"+
 
 					       		 "<div class='col-sm-3' id='eventimage'>" +
-					          		"<img class='img-responsive' src='./images/500holder.png'/>" +
+					          		"<img class='img-responsive crop' src='" + obj.imageURL + "'/>" +
 					          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
 					        	 "</div>" +
 
