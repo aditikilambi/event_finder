@@ -20,8 +20,8 @@ var addEvents = function () {
 	var organization = "Latin Club";
 	var date = $("#date").val();
 	var location = $("#location").val();
-	var startTime = $("#start-time").val();
-	var endTime = $("#end-time").val();
+  var startTime = $("#startTime option:selected").val() + " " + $("#ampm1 option:selected").val();
+  var endTime = $("#endTime option:selected").val() + " " + $("#ampm2 option:selected").val();
 	var description = $("#description").val();
 	var longd = $("#long-description").val();
 	var tags = $("#tags").val().split(" ");
@@ -97,38 +97,38 @@ function date(dateString){
 	return returnMonth + '   ' + dateString.substring(8,10);
 }
 
-function time(timeString){
-	var timeArray = timeString.split(':');
-	var hours = Number(timeArray[0]);
-	var minutes = timeArray[1];
-	var amopm = '';
-	if(hours == 0) {
-		hours  = 12;
-		amopm = 'AM';
-	}
-	else if(hours >= 12){
-		hours = hours - 12;
-		amopm = 'PM';
-	}
-	else {
-		amopm = 'AM'
-	}
-
-	return hours + ':' + minutes + ' ' + amopm;
-}
+// function time(timeString){
+// 	var timeArray = timeString.split(':');
+// 	var hours = Number(timeArray[0]);
+// 	var minutes = timeArray[1];
+// 	var amopm = '';
+// 	if(hours == 0) {
+// 		hours  = 12;
+// 		amopm = 'AM';
+// 	}
+// 	else if(hours >= 12){
+// 		hours = hours - 12;
+// 		amopm = 'PM';
+// 	}
+// 	else {
+// 		amopm = 'AM'
+// 	}
+//
+// 	return hours + ':' + minutes + ' ' + amopm;
+// }
 
 /*  Method for populating myEvents Page with only events from the organization */
 $(window).load(function() {
 	console.log('hello');
-	allEvents.orderByChild('date').once('value',function(snapshot) 
+	allEvents.orderByChild('date').once('value',function(snapshot)
 	{
-		var x = ' ';	
+		var x = ' ';
 		var i = 0;
-		snapshot.forEach(function(snapshot) {	
+		snapshot.forEach(function(snapshot) {
 			var obj = snapshot.val();
 			var key = snapshot.key;
-			if(obj.organization === "Latin Club") {	
-					x = x + 
+			if(obj.organization === "Latin Club") {
+					x = x +
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
@@ -151,7 +151,7 @@ $(window).load(function() {
 
 			        	 "<div class='col-sm-9 description'>"+
 
-			        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
+			        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
 			        	 	"<p> <strong>Organization: </strong>" + obj.organization + "</a></p>" +
 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
@@ -161,7 +161,7 @@ $(window).load(function() {
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 			            	"<p><button>see more</button></p>" +
 			              "</div>" +
-				       
+
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 				          	"<p><button>see less</button></p>" +
             			  "</div>" +
@@ -194,13 +194,13 @@ function editEvent(key){
 
 $(window).load(function() {
 	if(localStorage.getItem('search') == null) {
-		allEvents.orderByChild('date').once('value',function(snapshot) 
+		allEvents.orderByChild('date').once('value',function(snapshot)
 		{
-			var x = ' ';	
+			var x = ' ';
 			var i = 0;
-			snapshot.forEach(function(snapshot) {	
+			snapshot.forEach(function(snapshot) {
 				var obj = snapshot.val();
-					x = x + 
+					x = x +
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
 				            "<div class='col-sm-3 date'>" +
@@ -222,7 +222,7 @@ $(window).load(function() {
 
 			        	 "<div class='col-sm-9 description'>"+
 
-			        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
+			        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
 			        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
@@ -232,7 +232,7 @@ $(window).load(function() {
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 			            	"<p><button>see more</button></p>" +
 			              "</div>" +
-				       
+
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 				          	"<p><button>see less</button></p>" +
             			  "</div>" +
@@ -253,9 +253,9 @@ $(window).load(function() {
 
 		var orgToSearch = localStorage.getItem('orgSearch');
 		var etypeToSearch = localStorage.getItem('type');
-		
+
 		var tempEvents= myFirebase.child("allEvents");
-		var both = false;	
+		var both = false;
 		if(orgToSearch != "" && etypeToSearch != ""){
 			var searchRef = querybase.ref(tempEvents, ['organization']).where({
 					organization: orgToSearch,
@@ -283,7 +283,7 @@ $(window).load(function() {
 		if (localStorage.getItem('tags') == '') var tagstring = 'Any tags';
 
 
-		searchRef.once('value',function(snapshot) 
+		searchRef.once('value',function(snapshot)
 		{
 
 			var orgString = localStorage.getItem('orgSearch') == '' ? '' : localStorage.getItem('orgSearch');
@@ -294,15 +294,15 @@ $(window).load(function() {
 			document.getElementById('searchEventsCover').innerHTML = cool;
 
 			var x = '';
-			var i = 0;	
-			
+			var i = 0;
+
 			if(!both){
-				snapshot.forEach(function(snapshot) {	
+				snapshot.forEach(function(snapshot) {
 						var obj = snapshot.val();
 						console.log(localStorage.getItem('tags'));
 
 						if(localStorage.getItem('tags') == '' || obj.tags.includes(localStorage.getItem('tags'))){
-							x = x + 
+							x = x +
 				        	"<div class='container event'>" +
 				          		"<div class='row'>" +
 						            "<div class='col-sm-3 date'>" +
@@ -324,7 +324,7 @@ $(window).load(function() {
 
 					        	 "<div class='col-sm-9 description'>"+
 
-					        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
+					        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
 					        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 					        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
 					        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
@@ -334,7 +334,7 @@ $(window).load(function() {
 					              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 					            	"<p><button>see more</button></p>" +
 					              "</div>" +
-						       
+
 						          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 						          	"<p><button>see less</button></p>" +
 		            			  "</div>" +
@@ -349,11 +349,11 @@ $(window).load(function() {
 					});
 				}
 			if(both){
-				snapshot.forEach(function(snapshot) {	
+				snapshot.forEach(function(snapshot) {
 					var obj = snapshot.val();
 					if(localStorage.getItem('type') == obj.eventTypes) {
 						if(localStorage.getItem('tags') == '' || obj.tags.includes(localStorage.getItem('tags'))){
-							x = x + 
+							x = x +
 				        	"<div class='container event'>" +
 				          		"<div class='row'>" +
 						            "<div class='col-sm-3 date'>" +
@@ -375,7 +375,7 @@ $(window).load(function() {
 
 					        	 "<div class='col-sm-9 description'>"+
 
-					        	 	"<p> <strong>Time:</strong> " + time(obj.startTime) + " - " + time(obj.endTime) +
+					        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
 					        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 					        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
 					        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
@@ -385,7 +385,7 @@ $(window).load(function() {
 					              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 					            	"<p><button>see more</button></p>" +
 					              "</div>" +
-						       
+
 						          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 						          	"<p><button>see less</button></p>" +
 		            			  "</div>" +
@@ -420,7 +420,7 @@ $(window).load(function() {
 
 // 							"<div class='share' style='padding: 15px; text-align: center;'>" +
 // 				         	 	"<a href='editEvent.html' id='" + key + "'onclick='editEvent(this.id);'><button class='edit'>Edit Event</button></a><br><br>" +
-// 								 "<button><a href='#' data-trigger='hover' data-toggle='popover' title='Share' data-html='true' data-placement='bottom' data-content=" + getContent() + "><i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +     		
+// 								 "<button><a href='#' data-trigger='hover' data-toggle='popover' title='Share' data-html='true' data-placement='bottom' data-content=" + getContent() + "><i class='fa fa-share-alt' style='font-size:24px'></i></button></a>" +
 // 							"</div>" +
 // 		       		 	"</div>"+
 
@@ -440,7 +440,7 @@ $(window).load(function() {
 // 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 // 			            	"<p><button>see more</button></p>" +
 // 			              "</div>" +
-				       
+
 // 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
 // 				          	"<p><button>see less</button></p>" +
 //             			  "</div>" +

@@ -13,7 +13,7 @@
       <link href="css/form.css" rel="stylesheet">
       <link href="css/events.css" rel="stylesheet">
 
-      
+
 
       <!--- Stylesheet for share icon -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,7 +30,7 @@
       <script src="js/tabs.js"></script>
   </head>
 
-  <body> 
+  <body>
     <!-- Load our form script file -->
     <script src="js/form.js"></script>
     <script src="js/event.js"></script>
@@ -46,7 +46,7 @@
         <h1>EventFinder</h1>
         <h3>Create Event</h3>
       </div>
-      
+
       <!--  Making the My events, Upcoming, and create event tabs  -->
       <div class="tab">
           <div class="tablinks" id='myEvents'><a href="./myEvents.html" style="text-decoration: none"><button><p>My Events</p></button></a></div>
@@ -62,29 +62,95 @@
         <h2>Create a Latin Club Event</h2>
         <br>
         <div class='form-group'>
-          <label for="eventName">Event Title</label>
+          <label for="eventName">Event Title:</label>
           <input id="eventName" class="form-control form-control-lg" type="text" placeholder="Enter an Event Name">
         </div>
-      
-        <br>
-        
+
+        <!-- <br> -->
+
         <div class='form-group'>
+          <label for"date">Date:&nbsp;</label>
           <input id= 'date' type="date" placeholder="MM/DD/YYYY">
         </div>
 
         <div class='form-group'>
-          <label for='start-time'>Start time</label>
-          <input id="start-time" type="time">
-          <label for='end-time'>End time</label>
-          <input id="end-time" type="time"></p>
-        </div>        
-       
+          <p><select id="startTime" style="width:100px;">
+            <option value="">Start Time</option>
+            <option value="12">12:00</option>
+            <option value="1230">12:30</option>
+            <option value="1">1:00</option>
+            <option value="130">1:30</option>
+            <option value="2">2:00</option>
+            <option value="230">2:30</option>
+            <option value="3">3:00</option>
+            <option value="330">3:30</option>
+            <option value="4">4:00</option>
+            <option value="430">4:30</option>
+            <option value="5">5:00</option>
+            <option value="530">5:30</option>
+            <option value="6">6:00</option>
+            <option value="630">6:30</option>
+            <option value="7">7:00</option>
+            <option value="730">7:30</option>
+            <option value="8">8:00</option>
+            <option value="830">8:30</option>
+            <option value="9">9:00</option>
+            <option value="930">9:30</option>
+            <option value="10">10:00</option>
+            <option value="1030">10:30</option>
+            <option value="11">11:00</option>
+            <option value="1130">11:30</option>
+          </select>
+
+          <select id="ampm1" style="width:80px;">
+            <option value="">AM/PM</option>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <select id="endTime" style="width:100px;">
+            <option value="">End Time</option>
+            <option value="12">12:00</option>
+            <option value="1230">12:30</option>
+            <option value="1">1:00</option>
+            <option value="130">1:30</option>
+            <option value="2">2:00</option>
+            <option value="230">2:30</option>
+            <option value="3">3:00</option>
+            <option value="330">3:30</option>
+            <option value="4">4:00</option>
+            <option value="430">4:30</option>
+            <option value="5">5:00</option>
+            <option value="530">5:30</option>
+            <option value="6">6:00</option>
+            <option value="630">6:30</option>
+            <option value="7">7:00</option>
+            <option value="730">7:30</option>
+            <option value="8">8:00</option>
+            <option value="830">8:30</option>
+            <option value="9">9:00</option>
+            <option value="930">9:30</option>
+            <option value="10">10:00</option>
+            <option value="1030">10:30</option>
+            <option value="11">11:00</option>
+            <option value="1130">11:30</option>
+          </select>
+
+          <select id="ampm2" style="width:80px;">
+            <option value="">AM/PM</option>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+
 
         <p><input id='location' placeholder='Location of your Event'></p>
 
         <br>
 
-        <p><select id="eventType">    
+        <p><select id="eventType">
           <option value="">Event Category</option>
           <option value="art">Art</option>
           <option value="comedy">Comedy</option>
@@ -95,15 +161,16 @@
           <option value="party">Party</option>
           <option value="other">Other</option>
         </select></p>
-        
+
         <p><textarea id="description" placeholder="Give your event a catchy description." maxlength="100"></textarea></p>
-        
+
         <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
-        
+
+        <br>
         <p>Event Tags</p>
 
-        <div class='recTags'> Recommended: 
-          <div class='buttontags' id='food' onclick="addTag(this.id)">food</div>     
+        <div class='recTags'> Recommended:
+          <div class='buttontags' id='food' onclick="addTag(this.id)">food</div>
           <div class='buttontags' id='fun' onclick="addTag(this.id)">fun</div>
           <div class='buttontags' id='free' onclick="addTag(this.id)">free</div>
           <div class='buttontags' id='paid' onclick="addTag(this.id)">paid</div>
@@ -118,13 +185,10 @@
         <p><textarea id="tags" placeholder="Event Tags, separated by a space"></textarea></p>
 
         <p id = 'submit'><input type="submit" value="Create Event"></p>
-      
+
       </form>
 
     </div>
-   
+
   </body>
 </html>
-
-
-
