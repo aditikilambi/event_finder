@@ -55,29 +55,10 @@
 
 
         <form id='searchbar' action='./upcoming.html'>
-          <br>
-          <p style="color:white;">Filter and Search</p>
-          <p><select id="Organization">
-            <option value="">Organization</option>
-            <option value="Latin Club">Latin Club</option>
-            <option value="Design Club">Design Club</option>
-            <option value="Dance Club">Dance Club</option>
-            <option value="Music Club">Music Club</option>
-          </select></p>
 
-          <p><select id="eventTypeSearch">
-            <option value="">Event Category</option>
-            <option value="art">Art</option>
-            <option value="comedy">Comedy</option>
-            <option value="dance">Dance</option>
-            <option value="music">Music</option>
-            <option value="food">Food</option>
-            <option value="networking">Networking</option>
-            <option value="party">Party</option>
-            <option value="other">Other</option>
-          </select></p>
 
-          <br><br>
+          <p style="color:white;">Search and Filter</p>
+
 
           <p><input id='tags' type="text" placeholder="&#xF002; Search for a tag" style="font-family:Arial, FontAwesome" /></p>
           <div id='recs'>
@@ -98,10 +79,31 @@
             <div class='tagrec' id='lab' onclick="searchTag(this.id)">lab</div>
           </div>
 
+          <br> <br> <br> <br>
+          <p><select id="Organization">
+            <option value="">Organization</option>
+            <option value="Latin Club">Latin Club</option>
+            <option value="Design Club">Design Club</option>
+            <option value="Dance Club">Dance Club</option>
+            <option value="Music Club">Music Club</option>
+          </select></p>
+
+          <p><select id="eventTypeSearch">
+            <option value="">Event Category</option>
+            <option value="art">Art</option>
+            <option value="comedy">Comedy</option>
+            <option value="dance">Dance</option>
+            <option value="music">Music</option>
+            <option value="food">Food</option>
+            <option value="networking">Networking</option>
+            <option value="party">Party</option>
+            <option value="other">Other</option>
+          </select></p>
+
 
           <!-- <br><br><br><br> -->
 
-          <p id = 'submit'><input type="submit" value="Search" style="color:black;"></p>
+          <p id = 'submit'><input type="submit" value="Apply Search" style="color:black;"></p>
         </form>
       </div>
 
