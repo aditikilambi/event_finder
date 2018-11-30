@@ -31,22 +31,22 @@ textarea {
 
 
 #description {
-	width: 70%;
-	height: 100px;
+/*	width: 70%;
+*/	height: 100px;
 }
 
-#location {
+/*#location {
 	width: 70%;
-}
+}*/
 
 #long-description {
-	width: 70%;
-	height: 200px;
+/*	width: 70%;
+*/	height: 200px;
 }
 
 #tags {
-	width: 70%;
-	height: 50px;
+/*	width: 70%;
+*/	height: 50px;
 }
 
 .buttontags {

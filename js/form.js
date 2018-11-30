@@ -97,6 +97,18 @@ function date(dateString){
 	return returnMonth + '   ' + dateString.substring(8,10);
 }
 
+$(document).ready(function() {
+    var text_max = 99;
+    $('#textarea_feedback').html(text_max + ' characters remaining');
+
+    $('#description').keyup(function() {
+        var text_length = $('#description').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' characters remaining');
+    });
+});
+
 // function time(timeString){
 // 	var timeArray = timeString.split(':');
 // 	var hours = Number(timeArray[0]);
@@ -119,7 +131,6 @@ function date(dateString){
 
 /*  Method for populating myEvents Page with only events from the organization */
 $(window).load(function() {
-	console.log('hello');
 	allEvents.orderByChild('date').once('value',function(snapshot)
 	{
 		var x = ' ';

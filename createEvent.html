@@ -60,22 +60,27 @@
 
       <form id='addEventForm' action='./myEvents.html' >
 
-        <h2>Create a Latin Club Event</h2>
+        <h2 style='color: white'>Create a Latin Club Event</h2>
         <br>
         <div class='form-group'>
           <label for="eventName">Event Title:</label>
-          <input id="eventName" class="form-control form-control-lg" type="text" placeholder="Enter an Event Name">
+          <input id="eventName" class="form-control form-control-lg" type="text" placeholder="Enter an Event Name" required>
         </div>
+
+        <br>
 
         <!-- <br> -->
 
-        <div class='form-group'>
+        <div class='form-group' >
           <label for"date">Date:&nbsp;</label>
-          <input id= 'date' type="date" placeholder="MM/DD/YYYY">
+          <input id= 'date' type="date" class="form-control" placeholder="MM/DD/YYYY" required>
         </div>
 
-        <div class='form-group'>
-          <p><select id="startTime" style="width:100px;">
+        <br> 
+
+        <label for='startTime'>Time:</label>
+        <div class='form-inline'>
+          <p><select id="startTime" style="width:100px;" class="form-control" required>
             <option value="">Start Time</option>
             <option value="12">12:00</option>
             <option value="1230">12:30</option>
@@ -103,7 +108,7 @@
             <option value="1130">11:30</option>
           </select>
 
-          <select id="ampm1" style="width:80px;">
+          <select id="ampm1" style="width:80px;" class="form-control" required>
             <option value="">AM/PM</option>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
@@ -111,7 +116,7 @@
 
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-          <select id="endTime" style="width:100px;">
+          <select id="endTime" style="width:100px;" class="form-control">
             <option value="">End Time</option>
             <option value="12">12:00</option>
             <option value="1230">12:30</option>
@@ -139,19 +144,22 @@
             <option value="1130">11:30</option>
           </select>
 
-          <select id="ampm2" style="width:80px;">
+          <select id="ampm2" style="width:80px;" class="form-control">
             <option value="">AM/PM</option>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
           </select>
         </div>
 
-
-        <p><input id='location' placeholder='Location of your Event'></p>
+        <div class='form-group'>
+          <label for="location">Event Location:</label>
+          <input id='location' class='form-control form-control-lg' placeholder='Location of your Event'>
+        </div>
 
         <br>
+      
 
-        <p><select id="eventType">
+        <p><select id="eventType" class="form-control form-control-lg">
           <option value="">Event Category</option>
           <option value="art">Art</option>
           <option value="comedy">Comedy</option>
@@ -163,14 +171,22 @@
           <option value="other">Other</option>
         </select></p>
 
-        <p><textarea id="description" placeholder="Give your event a catchy description." maxlength="100"></textarea><br>Max characters: 100</p>
+        <div class='form-group'>
+          <label for='description'>Event Description:</label>
+          <textarea id="description" placeholder="Give your event a catchy description." maxlength="100" class="form-control"></textarea>
+          <div id="textarea_feedback" style='color: white'></div>
 
-        <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
+        </div>
 
+        <div class='form-group'>
+          <label for='description'>Event Details:</label>
+          <textarea id="long-description" placeholder="Full Event Details" class='form-control'></textarea>
+        </div>
         <br>
-        <p>Event Tags</p>
 
-        <div class='recTags'> Recommended:
+        <p style='color: white'>Event Tags</p>
+
+        <div class='recTags' style='color: white'> Recommended:
           <div class='buttontags' id='food' onclick="addTag(this.id)">food</div>
           <div class='buttontags' id='fun' onclick="addTag(this.id)">fun</div>
           <div class='buttontags' id='free' onclick="addTag(this.id)">free</div>
@@ -183,10 +199,14 @@
           <div class='buttontags' id='cultural' onclick="addTag(this.id)">cultural</div>
         </div>
 
-        <p><textarea id="tags" placeholder="Event Tags, separated by a space"></textarea></p>
+        <div id='form-group'>
+          <textarea id="tags" placeholder="Event Tags, separated by a space" class='form-control'></textarea>
+        </div>
 
+        <br>
+        <div id='form-group'>
         <p id = 'submit'><input type="submit" value="Create Event"></p>
-
+      </div>
       </form>
 
     </div>

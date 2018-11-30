@@ -61,6 +61,9 @@ button {
 	border-radius: 3px;
 }
 
+label {
+	color: white;
+}
 
 .loading {
 	display: block;
