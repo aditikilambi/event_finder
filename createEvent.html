@@ -25,16 +25,30 @@
       <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
       <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
       <script src="js/bootstrap.min.js"></script>
 
 
       <script src="js/tabs.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+      <script src="./js/ckeditor.js"></script>
+
+
+
+<!--       <script>
+        $( function() {
+          $( document ).tooltip();
+        } );
+      </script> -->
   </head>
 
   <body>
     <!-- Load our form script file -->
     <script src="js/form.js"></script>
     <script src="js/event.js"></script>
+
 
 <!--     <script>
       $('#openNav').bind('beforeUnload', function(){
@@ -60,52 +74,61 @@
 
       <form id='addEventForm' action='./myEvents.html' >
 
+
+
         <h2 style='color: white'>Create a Latin Club Event</h2>
+        <p style='color: white'><span style="color: #FFCD00">*</span> marks required fields.</p>
         <br>
+
         <div class='form-group'>
-          <label for="eventName">Event Title:</label>
+          <span style="color: #FFCD00">*  </span><label for="eventName">Event Title: </label>
           <input id="eventName" class="form-control form-control-lg" type="text" placeholder="Enter an Event Name" required>
-        </div>
-
-        <br>
-
-        <!-- <br> -->
-
-        <div class='form-group' >
-          <label for"date">Date:&nbsp;</label>
-          <input id= 'date' type="date" class="form-control" placeholder="MM/DD/YYYY" required>
         </div>
 
         <br> 
 
-        <label for='startTime'>Time:</label>
+        <div class='form-group' >
+          <span style="color: #FFCD00">*  </span><label for"date">Date:&nbsp;</label>
+          <input id= 'date' type="date" class="form-control" placeholder="MM/DD/YYYY" required>
+        </div>
+
+        <br> <br> 
+
+
+        <label for='startTime'><span style="color: #FFCD00">*  </span>Event Time:</label>
         <div class='form-inline'>
-          <p><select id="startTime" style="width:100px;" class="form-control" required>
-            <option value="">Start Time</option>
-            <option value="12">12:00</option>
-            <option value="1230">12:30</option>
-            <option value="1">1:00</option>
-            <option value="130">1:30</option>
-            <option value="2">2:00</option>
-            <option value="230">2:30</option>
-            <option value="3">3:00</option>
-            <option value="330">3:30</option>
-            <option value="4">4:00</option>
-            <option value="430">4:30</option>
-            <option value="5">5:00</option>
-            <option value="530">5:30</option>
-            <option value="6">6:00</option>
-            <option value="630">6:30</option>
-            <option value="7">7:00</option>
-            <option value="730">7:30</option>
-            <option value="8">8:00</option>
-            <option value="830">8:30</option>
-            <option value="9">9:00</option>
-            <option value="930">9:30</option>
-            <option value="10">10:00</option>
-            <option value="1030">10:30</option>
-            <option value="11">11:00</option>
-            <option value="1130">11:30</option>
+          <label for="startTime" style='padding-right: 10px'>Start: </label>
+          <select id="startTime" style="width:60px;" class="form-control" required>
+            <option value="">Hour</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <span>  :  </span>
+
+          <select id="startTime2" style="width:50px;" class="form-control" required>
+            <option value="">Min</option>
+            <option value="00">00</option>
+            <option value="05">05</option>
+            <option value='10'>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
           </select>
 
           <select id="ampm1" style="width:80px;" class="form-control" required>
@@ -114,42 +137,54 @@
             <option value="PM">PM</option>
           </select>
 
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span style= 'color: white; padding: 30px'>to</span>
 
-          <select id="endTime" style="width:100px;" class="form-control">
-            <option value="">End Time</option>
-            <option value="12">12:00</option>
-            <option value="1230">12:30</option>
-            <option value="1">1:00</option>
-            <option value="130">1:30</option>
-            <option value="2">2:00</option>
-            <option value="230">2:30</option>
-            <option value="3">3:00</option>
-            <option value="330">3:30</option>
-            <option value="4">4:00</option>
-            <option value="430">4:30</option>
-            <option value="5">5:00</option>
-            <option value="530">5:30</option>
-            <option value="6">6:00</option>
-            <option value="630">6:30</option>
-            <option value="7">7:00</option>
-            <option value="730">7:30</option>
-            <option value="8">8:00</option>
-            <option value="830">8:30</option>
-            <option value="9">9:00</option>
-            <option value="930">9:30</option>
-            <option value="10">10:00</option>
-            <option value="1030">10:30</option>
-            <option value="11">11:00</option>
-            <option value="1130">11:30</option>
+
+          <label for="endTime" style='padding-right: 10px'>End: </label>
+
+          <select id="endTime" style="width:60px;" class="form-control" required>
+            <option value="">Hour</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+         </select>
+
+          <span>  :  </span>
+
+
+          <select id="endTime2" style="width:50px;" class="form-control" required>
+            <option value="">Min</option>
+            <option value="00">00</option>
+            <option value="05">05</option>
+            <option value='10'>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
           </select>
 
-          <select id="ampm2" style="width:80px;" class="form-control">
+          <select id="ampm2" style="width:80px;" class="form-control" required>
             <option value="">AM/PM</option>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
           </select>
         </div>
+
+        <br><br> 
 
         <div class='form-group'>
           <label for="location">Event Location:</label>
@@ -157,9 +192,20 @@
         </div>
 
         <br>
-      
 
-        <p><select id="eventType" class="form-control form-control-lg">
+        <div class='form-group' style='margin-bottom: 5px' onmouseover="showMessage1()" onmouseout='hideMessage1()'>
+          <label for="imageurl">Add Event Image: </label>
+          <input id= 'imageurl' type="url" class="form-control" placeholder='Add Desired Image URL'>
+        </div>
+        <p id='message1' style='color: white;'> 
+          If left blank, a default image will be used.
+        </p>
+
+        <br>
+      
+      <div class='form-group'>
+        <label for='eventType'><span style="color: #FFCD00">*  </span>Category: </label>
+        <select id="eventType" class="form-control form-control-lg">
           <option value="">Event Category</option>
           <option value="art">Art</option>
           <option value="comedy">Comedy</option>
@@ -169,22 +215,29 @@
           <option value="networking">Networking</option>
           <option value="party">Party</option>
           <option value="other">Other</option>
-        </select></p>
+        </select>
+
+      </div>
+
+      <br>
 
         <div class='form-group'>
-          <label for='description'>Event Description:</label>
+          <label for='description'><span style="color: #FFCD00">*  </span>Event Description:</label>
           <textarea id="description" placeholder="Give your event a catchy description." maxlength="99" class="form-control"></textarea>
           <div id="textarea_feedback" style='color: white'></div>
 
         </div>
 
-        <div class='form-group'>
-          <label for='description'>Event Details:</label>
-          <textarea id="long-description" placeholder="Full Event Details" class='form-control'></textarea>
-        </div>
         <br>
 
-        <p style='color: white'>Event Tags</p>
+        <div class='form-group'>
+          <label for='description'>Event Details:</label>
+          <textarea id="long-description"></textarea>
+        </div>
+
+        <br>
+
+        <p style='color: white; font-weight: bold; margin-bottom: 10px'>Event Tags: </p>
 
         <div class='recTags' style='color: white'> Recommended:
           <div class='buttontags' id='food' onclick="addTag(this.id)">food</div>
@@ -199,16 +252,27 @@
           <div class='buttontags' id='cultural' onclick="addTag(this.id)">cultural</div>
         </div>
 
-        <div id='form-group'>
-          <textarea id="tags" placeholder="Event Tags, separated by a space" class='form-control'></textarea>
+
+        <div id='form-group' class='message' onmouseover="showMessage()" onmouseout='hideMessage()'>
+          <textarea id="tags" placeholder="Enter Event Tags" class='form-control' data-message='hello'></textarea>
         </div>
+        <div id='message' style='color: white;'>Must separate tags by space. Ex. <span style='font-style: italic'>food fun free</span></div>
 
         <br>
         <div id='form-group'>
-        <p id = 'submit'><input type="submit" value="Create Event"></p>
-      </div>
+         <p id = 'submit'><input type="submit" value="Create Event"></p>
+        </div>
       </form>
-
+      <script>
+        ClassicEditor
+        .create( document.querySelector( '#long-description' ), {
+          removePlugins: [ 'Heading'],
+          toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote', 'link']
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+      </script>
     </div>
 
   </body>

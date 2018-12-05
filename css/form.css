@@ -15,11 +15,15 @@ form p {
 form input {
 	/* "no file chosen" should be white but is grey b/c of input*/
 	color: black;
+	border-radius: 0px;
 }
 
 textarea {
 	color: black;
+	border-radius: 0px;
 }
+
+
 
 ::placeholder {
   color: #B6B1A9;
@@ -32,7 +36,7 @@ textarea {
 
 #description {
 /*	width: 70%;
-*/	height: 100px;
+*/	height: 50px;
 }
 
 /*#location {
@@ -63,10 +67,20 @@ textarea {
     margin-bottom: 2px;
 }
 
+textarea {
+  resize: none;
+}
+
 .buttontags:hover {
 	box-shadow: gray;
 	background-color: #1b250e;
 }
+
+#message, #message1 {
+	display: none;
+}
+
+
 
 /* necessary?
 #submit {

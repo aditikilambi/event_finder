@@ -20,13 +20,17 @@ var addEvents = function () {
 	var organization = "Latin Club";
 	var date = $("#date").val();
 	var location = $("#location").val();
-  var startTime = $("#startTime option:selected").val() + " " + $("#ampm1 option:selected").val();
-  var endTime = $("#endTime option:selected").val() + " " + $("#ampm2 option:selected").val();
+  	var startTime = $("#startTime option:selected").val() + ":" + $("#startTime2 option:selected").val() + " " + $("#ampm1 option:selected").val();
+  	var endTime = $("#endTime option:selected").val() + ":" + $("#endTime2 option:selected").val() + " " + $("#ampm2 option:selected").val();
 	var description = $("#description").val();
 	var longd = $("#long-description").val();
 	var tags = $("#tags").val().split(" ");
 	var eventType = $("#eventType option:selected").val();
-	var imageURL = "./images/imageSenior.jpg";
+	var url = $("#imageurl").val();
+
+	if(url == '') {
+		url = "./images/imageSenior.jpg";
+	}
 
 	allEvents.push({
 		"name": name,
@@ -39,7 +43,7 @@ var addEvents = function () {
 		"longDes": longd,
 		"tags": tags,
 		"eventTypes": eventType,
-		"imageURL" : imageURL,
+		"imageURL" : url,
 	});
 
 	localStorage.setItem("eventcreate", true);
@@ -62,6 +66,23 @@ function parseString(toParse) {
 	return toParse.split(" ")[0];
 }
 
+function showMessage() {
+	document.getElementById('message').style.display = 'block';
+
+}
+
+function hideMessage() {
+	document.getElementById('message').style.display = 'none';
+}
+
+function showMessage1() {
+	document.getElementById('message1').style.display = 'block';
+
+}
+
+function hideMessage1() {
+	document.getElementById('message1').style.display = 'none';
+}
 
 var searchterms = function() {
 	var organization = $( "#Organization option:selected" ).val();
@@ -106,6 +127,11 @@ $(document).ready(function() {
         var text_remaining = text_max - text_length;
 
         $('#textarea_feedback').html(text_remaining + ' characters remaining');
+        console.log(text_remaining);
+        	document.getElementById('textarea_feedback').style.color = 'white';
+        if(text_remaining <= 10) {
+        	document.getElementById('textarea_feedback').style.color = '#FFCD00';
+	    }
     });
 });
 
@@ -166,7 +192,7 @@ $(window).load(function() {
 			        	 	"<p> <strong>Organization: </strong>" + obj.organization + "</a></p>" +
 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
-			        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
+			        	 	"<div id='longBoi" + i + "' class='dontshow'> <p><strong> Details: </strong></p>" + obj.longDes + "</div>" +
 
 
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
@@ -174,7 +200,7 @@ $(window).load(function() {
 			              "</div>" +
 
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
-				          	"<p><button>see less</button></p>" +
+				          	"<br><p><button>see less</button></p>" +
             			  "</div>" +
 			              "</div>" +
 		              "</div> <br><br><br>";
@@ -237,7 +263,7 @@ $(window).load(function() {
 			        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 			        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
 			        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
-			        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
+			        	 	"<div id='longBoi" + i + "' class='dontshow'> <p><strong> Details: </strong></p>" + obj.longDes + "</div>" +
 
 
 			              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
@@ -245,7 +271,7 @@ $(window).load(function() {
 			              "</div>" +
 
 				          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
-				          	"<p><button>see less</button></p>" +
+				          	"<br><p><button>see less</button></p>" +
             			  "</div>" +
 			              "</div>" +
 		              "</div> <br><br><br>";
@@ -339,7 +365,7 @@ $(window).load(function() {
 					        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 					        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
 					        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
-					        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
+					        	 	"<div id='longBoi" + i + "' class='dontshow'> <p><strong> Details: </strong></p>" + obj.longDes + "</div>" +
 
 
 					              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
@@ -347,7 +373,7 @@ $(window).load(function() {
 					              "</div>" +
 
 						          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
-						          	"<p><button>see less</button></p>" +
+						          	"<br><p><button>see less</button></p>" +
 		            			  "</div>" +
 					              "</div>" +
 				              "</div> <br><br><br>";
@@ -390,15 +416,15 @@ $(window).load(function() {
 					        	 	"<p> <strong>Organization:</strong> " + obj.organization + "</p>" +
 					        	 	"<p> <strong>Location:</strong> " + obj.location + "</p>" +
 					        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
-					        	 	"<p id='longBoi" + i + "' class='dontshow'> <strong> Details: </strong>" + obj.longDes + "</p>" +
+					        	 	"<div id='longBoi" + i + "' class='dontshow'> <p><strong> Details: </strong></p>" + obj.longDes + "</div>" +
 
 
 					              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
 					            	"<p><button>see more</button></p>" +
 					              "</div>" +
 
-						          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
-						          	"<p><button>see less</button></p>" +
+						          "<br><div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
+						          	"<br><p><button>see less</button></p>" +
 		            			  "</div>" +
 					              "</div>" +
 				              "</div> <br><br><br>";
