@@ -13,7 +13,7 @@
       <link href="css/form.css" rel="stylesheet">
       <link href="css/events.css" rel="stylesheet">
 
-      
+
 
       <!--- Stylesheet for share icon -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,12 +23,16 @@
       <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
       <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
-  </head>
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-  <body> 
-    <!-- Load our form script file -->
-    <script src="js/form.js"></script>
-    <script src="js/event.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+
+
+      <script src="js/tabs.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+      <script src="./js/ckeditor.js"></script>
 
     <script>
       window.onload = function(){
@@ -46,46 +50,170 @@
       }
     </script>
 
+  </head>
+
+  <body>
+    <!-- Load our form script file -->
+    <script src="js/form.js"></script>
+    <script src="js/event.js"></script>
+
+
+<!--     <script>
+      $('#openNav').bind('beforeUnload', function(){
+        return 'Are you sure you want to leave?';
+      });
+    </script> -->
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
-        <div id = "openNav"><a href = './upcoming.html'><i class="fa fa-search"></i></a></div>
         <h1>EventFinder</h1>
         <h3>Edit Event</h3>
       </div>
-      
+
       <!--  Making the My events, Upcoming, and create event tabs  -->
       <div class="tab">
           <div class="tablinks" id='myEvents'><a href="./myEvents.html" style="text-decoration: none"><button><p>My Events</p></button></a></div>
-          <div class="tablinks" id='upcoming'><a href="./upcoming.html" style="text-decoration: none"><button><p>Upcoming Events</p></button></a></div>
-          <div  class="tablinks" id='create'><a href="./createEvent.html" style="text-decoration: none"><button><p>Create Event</p></button></a></div>
+          <div class="tablinks" id='upcoming'><a href="./upcoming.html" style="text-decoration: none"><button><p>All Events</p></button></a></div>
+          <div  class="tablinks" id='create'><a href="./editEvent.html" style="text-decoration: none"><button><p>Edit Event</p></button></a></div>
       </div>
 
     <div id = 'form'>
 
-      <form action='./myEvents.html' onload='editEventAdd()'>
 
-        <h2>Edit a Latin Club Event</h2>
+      <form id='addEventForm' action='./myEvents.html' >
 
 
-        <h3><input id="eventName" placeholder="Event Name"></h3>
-        
+
+        <h2 style='color: white'>Edit a Latin Club Event</h2>
+        <p style='color: white'><span style="color: #FFCD00">*</span> marks required fields.</p>
         <br>
 
-        <h4>Add an image<p><input type="file" name="eventPic"></p>
+        <div class='form-group'>
+          <span style="color: #FFCD00">*  </span><label for="eventName">Event Title: </label>
+          <input id="eventName" class="form-control form-control-lg" type="text" placeholder="Enter an Event Name" required>
+        </div>
+
+        <br> 
+
+        <div class='form-group' >
+          <span style="color: #FFCD00">*  </span><label for"date">Date:&nbsp;</label>
+          <input id= 'date' type="date" class="form-control" placeholder="MM/DD/YYYY" required>
+        </div>
+
+        <br> <br> 
+
+
+        <label for='startTime'><span style="color: #FFCD00">*  </span>Event Time:</label>
+        <div class='form-inline'>
+          <label for="startTime" style='padding-right: 10px'>Start: </label>
+          <select id="startTime" style="width:60px;" class="form-control" required>
+            <option value="">Hour</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <span>  :  </span>
+
+          <select id="startTime2" style="width:50px;" class="form-control" required>
+            <option value="">Min</option>
+            <option value="00">00</option>
+            <option value="05">05</option>
+            <option value='10'>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+          </select>
+
+          <select id="ampm1" style="width:80px;" class="form-control" required>
+            <option value="">AM/PM</option>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+
+          <span style= 'color: white; padding: 30px'>to</span>
+
+
+          <label for="endTime" style='padding-right: 10px'>End: </label>
+
+          <select id="endTime" style="width:60px;" class="form-control" required>
+            <option value="">Hour</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+         </select>
+
+          <span>  :  </span>
+
+
+          <select id="endTime2" style="width:50px;" class="form-control" required>
+            <option value="">Min</option>
+            <option value="00">00</option>
+            <option value="05">05</option>
+            <option value='10'>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+          </select>
+
+          <select id="ampm2" style="width:80px;" class="form-control" required>
+            <option value="">AM/PM</option>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+
+        <br><br> 
+
+        <div class='form-group'>
+          <label for="location">Event Location:</label>
+          <input id='location' class='form-control form-control-lg' placeholder='Location of your Event'>
+        </div>
 
         <br>
-        
-        <p>Date: <input id='date' type="date" placeholder="MM/DD/YYYY"></p>
-        <p>
-          Start Time: <input id="start-time" type="time" name="appt-time"> 
-          End Time: <input id="end-time" type="time" name="appt-time"></p>
 
-        <p><input id='location' placeholder='Location of your Event'></p>
+        <div class='form-group' style='margin-bottom: 5px' onmouseover="showMessage1()" onmouseout='hideMessage1()'>
+          <label for="imageurl">Add Event Image: </label>
+          <input id= 'imageurl' type="url" class="form-control" placeholder='Add Desired Image URL'>
+        </div>
+        <p id='message1' style='color: white;'> 
+          If left blank, a default image will be used.
+        </p>
 
         <br>
-
-        <p><select id="eventType">    
+      
+      <div class='form-group'>
+        <label for='eventType'><span style="color: #FFCD00">*  </span>Category: </label>
+        <select id="eventType" class="form-control form-control-lg">
           <option value="">Event Category</option>
           <option value="art">Art</option>
           <option value="comedy">Comedy</option>
@@ -95,36 +223,65 @@
           <option value="networking">Networking</option>
           <option value="party">Party</option>
           <option value="other">Other</option>
-        </select></p>
-        
-        <p><textarea id="description" placeholder="Give your event a catchy description." maxlength="100"></textarea></p>
-        
-        <p><textarea id="long-description" placeholder="Full Event Details"></textarea></p>
-        
-        <p>Event Tags</p>
+        </select>
 
-        <div class='recTags'> Recommended: 
-          <div class='buttontags' id='food' onclick="addTagFood()">food</div>
-          <div class='buttontags' id='free' onclick="addTagFree()">free</div>
-          <div class='buttontags' id='academic' onclick="addTagAcademic()">academic</div>
-          <div class='buttontags' id='cultural' onclick="addTagCultural()">cultural</div>
+      </div>
+
+      <br>
+
+        <div class='form-group'>
+          <label for='description'><span style="color: #FFCD00">*  </span>Event Description:</label>
+          <textarea id="description" placeholder="Give your event a catchy description." maxlength="99" class="form-control"></textarea>
+          <div id="textarea_feedback" style='color: white'></div>
+
         </div>
 
-        <p><textarea id="tags" placeholder="Event Tags, separated by a space"></textarea></p>
+        <br>
 
-        <p id = 'submit'><input type="submit" value="Edit Event"></p>
-      
+        <div class='form-group'>
+          <label for='description'>Event Details:</label>
+          <textarea id="long-description"></textarea>
+        </div>
+
+        <br>
+
+        <p style='color: white; font-weight: bold; margin-bottom: 10px'>Event Tags: </p>
+
+        <div class='recTags' style='color: white'> Recommended:
+          <div class='buttontags' id='food' onclick="addTag(this.id)">food</div>
+          <div class='buttontags' id='fun' onclick="addTag(this.id)">fun</div>
+          <div class='buttontags' id='free' onclick="addTag(this.id)">free</div>
+          <div class='buttontags' id='paid' onclick="addTag(this.id)">paid</div>
+          <div class='buttontags' id='academic' onclick="addTag(this.id)">academic</div>
+          <div class='buttontags' id='gbm' onclick="addTag(this.id)">gbm</div>
+          <div class='buttontags' id='jobs' onclick="addTag(this.id)">jobs</div>
+          <div class='buttontags' id='dinner' onclick="addTag(this.id)">dinner</div>
+          <div class='buttontags' id='greek' onclick="addTag(this.id)">greek</div>
+          <div class='buttontags' id='cultural' onclick="addTag(this.id)">cultural</div>
+        </div>
+
+
+        <div id='form-group' class='message' onmouseover="showMessage()" onmouseout='hideMessage()'>
+          <textarea id="tags" placeholder="Enter Event Tags" class='form-control' data-message='hello'></textarea>
+        </div>
+        <div id='message' style='color: white;'>Must separate tags by space. Ex. <span style='font-style: italic'>food fun free</span></div>
+
+        <br>
+        <div id='form-group'>
+         <p id = 'submit'><input type="submit" value="Edit Event"></p>
+        </div>
       </form>
-
+      <script>
+        ClassicEditor
+        .create( document.querySelector( '#long-description' ), {
+          removePlugins: [ 'Heading'],
+          toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote', 'link']
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+      </script>
     </div>
 
-
-    <!--    Importing Bootstrap Scripts    -->    
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-<!--     <script src="js/tabs.js"></script>
- -->
-   
   </body>
 </html>

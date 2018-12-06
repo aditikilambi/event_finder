@@ -35,6 +35,9 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
       <script src="./js/ckeditor.js"></script>
 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
 
 
 <!--       <script>
@@ -48,7 +51,14 @@
     <!-- Load our form script file -->
     <script src="js/form.js"></script>
     <script src="js/event.js"></script>
-
+    <script>
+        
+        window.onbeforeunload = function() {
+          if(localStorage.getItem("eventcreate") === "false") {
+            return "Are you sure you want to navigate away?";
+          }
+      }
+    </script>
 
 <!--     <script>
       $('#openNav').bind('beforeUnload', function(){
@@ -65,14 +75,14 @@
       <!--  Making the My events, Upcoming, and create event tabs  -->
       <div class="tab">
           <div class="tablinks" id='myEvents'><a href="./myEvents.html" style="text-decoration: none"><button><p>My Events</p></button></a></div>
-          <div class="tablinks" id='upcoming'><a href="./upcoming.html" style="text-decoration: none"><button><p>Upcoming Events</p></button></a></div>
+          <div class="tablinks" id='upcoming'><a href="./upcoming.html" style="text-decoration: none"><button><p>All Events</p></button></a></div>
           <div  class="tablinks" id='create'><a href="./createEvent.html" style="text-decoration: none"><button><p>Create Event</p></button></a></div>
       </div>
 
     <div id = 'form'>
 
 
-      <form id='addEventForm' action='./myEvents.html' >
+      <form id='addEventForm' action='./myEvents.html'>
 
 
 

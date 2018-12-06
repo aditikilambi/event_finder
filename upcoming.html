@@ -25,6 +25,10 @@
       <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
       <script src="https://unpkg.com/querybase@0.6.0"></script>
 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
+
   </head>
 
   <body class="preload">
@@ -53,33 +57,12 @@
           <p><a href="javascript:void(0)"  onclick="closeNav(); onClick();">&times;</a></p>
         </div>
 
-
         <form id='searchbar' action='./upcoming.html'>
 
+          <br><br>
 
-          <p style="color:white;">Search and Filter</p>
+          <p style="color:white;">Filter Events</p>
 
-
-          <p><input id='tags' type="text" placeholder="&#xF002; Search for a tag" style="font-family:Arial, FontAwesome" /></p>
-          <div id='recs'>
-            <div class='tagrec' id='food' onclick="searchTag(this.id)">food</div>
-            <div class='tagrec' id='fun' onclick="searchTag(this.id)">fun</div>
-            <div class='tagrec' id='free' onclick="searchTag(this.id)">free</div>
-            <div class='tagrec' id='paid' onclick="searchTag(this.id)">paid</div>
-            <div class='tagrec' id='academic' onclick="searchTag(this.id)">academic</div>
-            <div class='tagrec' id='gbm' onclick="searchTag(this.id)">gbm</div>
-            <div class='tagrec' id='jobs' onclick="searchTag(this.id)">jobs</div>
-            <div class='tagrec' id='dinner' onclick="searchTag(this.id)">dinner</div>
-            <div class='tagrec' id='greek' onclick="searchTag(this.id)">greek</div>
-            <div class='tagrec' id='cultural' onclick="searchTag(this.id)">cultural</div>
-            <div class='tagrec' id='social' onclick="searchTag(this.id)">social</div>
-            <div class='tagrec' id='senior' onclick="searchTag(this.id)">senior</div>
-            <div class='tagrec' id='graduation' onclick="searchTag(this.id)">graduation</div>
-            <div class='tagrec' id='singing' onclick="searchTag(this.id)">singing</div>
-            <div class='tagrec' id='lab' onclick="searchTag(this.id)">lab</div>
-          </div>
-
-          <br> <br> <br> <br>
           <p><select id="Organization">
             <option value="">Organization</option>
             <option value="Latin Club">Latin Club</option>
@@ -100,10 +83,35 @@
             <option value="other">Other</option>
           </select></p>
 
+          <br> <br>
+
+          <p style="color:white;">Search Tags</p>
+
+
+            <p><input id='tags' type="text" placeholder="&#xF002; &nbsp; Enter a tag" style="font-family:Arial, FontAwesome; width: 200px; margin-left: 5px;" /></p>
+
+           <div id='recs'>
+            <div class='tagrec' id='food' onclick="searchTag(this.id)">food</div>
+            <div class='tagrec' id='fun' onclick="searchTag(this.id)">fun</div>
+            <div class='tagrec' id='free' onclick="searchTag(this.id)">free</div>
+            <div class='tagrec' id='paid' onclick="searchTag(this.id)">paid</div>
+            <div class='tagrec' id='academic' onclick="searchTag(this.id)">academic</div>
+            <div class='tagrec' id='gbm' onclick="searchTag(this.id)">gbm</div>
+            <div class='tagrec' id='jobs' onclick="searchTag(this.id)">jobs</div>
+            <div class='tagrec' id='dinner' onclick="searchTag(this.id)">dinner</div>
+            <div class='tagrec' id='greek' onclick="searchTag(this.id)">greek</div>
+            <div class='tagrec' id='cultural' onclick="searchTag(this.id)">cultural</div>
+            <div class='tagrec' id='social' onclick="searchTag(this.id)">social</div>
+            <div class='tagrec' id='senior' onclick="searchTag(this.id)">senior</div>
+            <div class='tagrec' id='graduation' onclick="searchTag(this.id)">graduation</div>
+            <div class='tagrec' id='singing' onclick="searchTag(this.id)">singing</div>
+            <div class='tagrec' id='lab' onclick="searchTag(this.id)">lab</div>
+            </div>
+          
 
           <!-- <br><br><br><br> -->
 
-          <p id = 'submit'><input type="submit" value="Apply Search" style="color:black;"></p>
+          <p id = 'submit' style='margin-left: 38px; margin-top: 40px;'><input type="submit" value="Apply Search" style="color:black;"></p>
         </form>
       </div>
 

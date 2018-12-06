@@ -16,6 +16,12 @@ var myFirebase = firebase.database().ref();
 var allEvents = myFirebase.child("allEvents");
 
 var addEvents = function () {
+
+	localStorage.setItem("eventcreate", "true");
+
+
+	var confirm = window.confirm("Publish Event?");
+	if(!confirm) return false;
 	var name = $("#eventName").val();
 	var organization = "Latin Club";
 	var date = $("#date").val();
@@ -46,9 +52,27 @@ var addEvents = function () {
 		"imageURL" : url,
 	});
 
-	localStorage.setItem("eventcreate", true);
+	// window.location.href = "./myEvents.html";
 
 };
+
+// function confirmLeaving(callback) {
+// 		$.confirm({
+// 		    title: 'Confirm!',
+// 		    content: 'Simple confirm!',
+// 		    buttons: {
+// 		        confirm: function () {
+// 		            $.alert('Confirmed!');
+// 		        },
+// 		        cancel: function () {
+// 		            $.alert('Canceled!');
+// 		            return false;
+// 		        },
+// 		    }
+// 		});
+// 	callback();
+// }
+
 
 function addTag(id){
 	document.getElementById('tags').value+= id + " ";
@@ -237,6 +261,49 @@ $(window).load(function() {
 			var i = 0;
 			snapshot.forEach(function(snapshot) {
 				var obj = snapshot.val();
+				var key = snapshot.key;
+				if(obj.organization === "Latin Club") {
+						x = x +
+			        	"<div class='container event'>" +
+			          		"<div class='row'>" +
+					            "<div class='col-sm-3 date'>" +
+					       		 	"<p>" + date(obj.date) + "</p>" +
+					       		 "</div>" +
+
+					       		 "<div class='col-sm-8 title'>"+
+					       		 	"<p>" + obj.name + "</p>" +
+					       		 "</div>" +
+
+								"<div class='share' style='padding: 15px; text-align: center;'>" +
+					         	 	"<a href='editEvent.html' id='" + key + "'onclick='editEvent(this.id);'><button class='edit'>Edit Event</button></a><br><br>" +
+								"</div>" +
+			       		 	"</div>"+
+
+				       		 "<div class='col-sm-3' id='eventimage'>" +
+				          		"<img class='img-responsive crop' src='" + obj.imageURL + "'/>" +
+				          		"<a data-toggle='modal' href='#clubModal" + parseString(obj.organization) + "' id='org" + i + "' class='dontshow'><button>" + obj.organization + " Information</button></a>"+
+				        	 "</div>" +
+
+				        	 "<div class='col-sm-9 description'>"+
+
+				        	 	"<p> <strong>Time:</strong> " + obj.startTime + " - " + obj.endTime +
+				        	 	"<p> <strong>Organization: </strong>" + obj.organization + "</a></p>" +
+				        	 	"<p> <strong>Location: </strong><a href='http://maps.google.com'>" + obj.location + "</a></p>" +
+				        	 	"<p> <strong>Description: </strong>" + obj.description + "</p>" +
+				        	 	"<div id='longBoi" + i + "' class='dontshow'> <p><strong> Details: </strong></p>" + obj.longDes + "</div>" +
+
+
+				              "<div id='seemore" + i + "'class='displayIt' onclick='clickIt(" + i + ")'>" +
+				            	"<p><button>see more</button></p>" +
+				              "</div>" +
+
+					          "<div id='seeless" + i + "'class='dontshow' onclick='clickItBack("+ i + ")'>" +
+					          	"<br><p><button>see less</button></p>" +
+	            			  "</div>" +
+				              "</div>" +
+			              "</div> <br><br><br>";
+		           }
+				else{
 					x = x +
 		        	"<div class='container event'>" +
 		          		"<div class='row'>" +
@@ -275,6 +342,7 @@ $(window).load(function() {
             			  "</div>" +
 			              "</div>" +
 		              "</div> <br><br><br>";
+		             }
 			 	if (document.getElementById('allEventContent') == null) return;
 			 	document.getElementById('allEventContent').innerHTML = x;
 			 	i = i + 1;
