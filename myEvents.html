@@ -76,7 +76,7 @@
               onClose: null,
               onClosed: null,
               icon_type: 'class',
-            });            
+            });
         document.getElementById('homeScreen').innerHTML = 'Welcome back, Latin Club';
           });
         }
@@ -116,7 +116,7 @@
                   onClose: null,
                   onClosed: null,
                   icon_type: 'class',
-                }); 
+                });
               });
         }
 
@@ -130,7 +130,7 @@
           localStorage.setItem("eventcreate", "false");
         }
 
-    
+
   </script>
 
 
@@ -159,14 +159,14 @@
       <!-- Creation of side nav bar -->
 
       <div id="mySidenav" class="sidenav">
+        <p id="logout"><button><a href="./index.html">Logout</a></button></p>
 
         <div id='closeSearch'>
-          <p><a href="javascript:void(0)"  onclick="closeNav(); onClick();" style='color: black; font-size: 30px'>&times;</a></p>
+          <p style="float:right; padding: 0px;"><a href="javascript:void(0)"  onclick="closeNav(); onClick();" style='color: black; font-size: 30px;'>&times;</a></p>
         </div>
 
 
         <form id='searchbar' action='./upcoming.html'>
-
           <br><br>
 
           <p style="color:white;">Filter Events</p>
@@ -215,7 +215,7 @@
             <div class='tagrec' id='singing' onclick="searchTag(this.id)">singing</div>
             <div class='tagrec' id='lab' onclick="searchTag(this.id)">lab</div>
             </div>
-          
+
 
           <!-- <br><br><br><br> -->
 
