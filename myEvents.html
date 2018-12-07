@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
       <meta charset="utf-8">
-      <title>EventFinder Home</title>
+      <title>Creo Home</title>
 
       <!--    Importing Stylesheets    -->
 
@@ -76,7 +76,7 @@
               onClose: null,
               onClosed: null,
               icon_type: 'class',
-            });
+            });            
         document.getElementById('homeScreen').innerHTML = 'Welcome back, Latin Club';
           });
         }
@@ -116,9 +116,94 @@
                   onClose: null,
                   onClosed: null,
                   icon_type: 'class',
-                });
+                }); 
               });
         }
+
+        if(localStorage.getItem("eventDeleted") === 'true') {
+            $(document).ready(function () {
+                 $.notify({
+                  // options
+                  title: '<strong>Success</strong>',
+                  message: "<br>Event Deleted<em></em>",
+                 icon: 'glyphicon glyphicon-ok',
+                  target: '_blank'
+                },{
+                  // settings
+                  element: 'body',
+                  //position: null,
+                  type: "success",
+                  //allow_dismiss: true,
+                  //newest_on_top: false,
+                  showProgressbar: false,
+                  placement: {
+                    from: "top",
+                    align: "center"
+                  },
+                  offset: 20,
+                  spacing: 10,
+                  z_index: 1031,
+                  delay: 1000,
+                  timer: 1000,
+                  url_target: '_blank',
+                  mouse_over: null,
+                  animate: {
+                    enter: 'animated fadeInDown',
+                    exit: 'animated fadeOutUp'
+                  },
+                  onShow: null,
+                  onShown: null,
+                  onClose: null,
+                  onClosed: null,
+                  icon_type: 'class',
+                }); 
+              });
+              localStorage.setItem("eventDeleted", "false");
+
+        }
+
+        if(localStorage.getItem("eventedit") === 'true') {
+            $(document).ready(function () {
+                 $.notify({
+                  // options
+                  title: '<strong>Success</strong>',
+                  message: "<br>Edited Event<em></em>",
+                 icon: 'glyphicon glyphicon-ok',
+                  target: '_blank'
+                },{
+                  // settings
+                  element: 'body',
+                  //position: null,
+                  type: "success",
+                  //allow_dismiss: true,
+                  //newest_on_top: false,
+                  showProgressbar: false,
+                  placement: {
+                    from: "top",
+                    align: "center"
+                  },
+                  offset: 20,
+                  spacing: 10,
+                  z_index: 1031,
+                  delay: 1000,
+                  timer: 1000,
+                  url_target: '_blank',
+                  mouse_over: null,
+                  animate: {
+                    enter: 'animated fadeInDown',
+                    exit: 'animated fadeOutUp'
+                  },
+                  onShow: null,
+                  onShown: null,
+                  onClose: null,
+                  onClosed: null,
+                  icon_type: 'class',
+                }); 
+              });
+              localStorage.setItem("eventedit", "false");
+        }
+
+
 
         localStorage.setItem('firstTime', 'false');
         // window.onload = function () {
@@ -130,7 +215,7 @@
           localStorage.setItem("eventcreate", "false");
         }
 
-
+    
   </script>
 
 
@@ -150,7 +235,7 @@
       <!--    Creating Page Header    -->
       <div class = 'jumbotron' id='pageHeader'>
         <div id = "openNav" class='hide' onclick="openNav()"><i class="fa fa-search"></i></div>
-        <h1>EventFinder</h1>
+        <h1><img src='./images/logo.png'></h1>
         <h3 id = 'homeScreen' >Home</h3>
       </div>
 
@@ -159,14 +244,16 @@
       <!-- Creation of side nav bar -->
 
       <div id="mySidenav" class="sidenav">
-        <p id="logout"><button><a href="./index.html">Logout</a></button></p>
+
+        <p id="logout" style='position: absolute; top: 0px; left: 140px;'><button><a href="./index.html" onclick='logout()' style='color: black;'>Logout</a></button></p>
 
         <div id='closeSearch'>
-          <p style="float:right; padding: 0px;"><a href="javascript:void(0)"  onclick="closeNav(); onClick();" style='color: black; font-size: 30px;'>&times;</a></p>
+          <p style='position: absolute; top: 10px; left: 190px'><a href="javascript:void(0)"  onclick="closeNav(); onClick();" style='color: black;'>&times;</a></p>
         </div>
 
 
-        <form id='searchbar' action='./upcoming.html'>
+        <form id='searchbar' action='./upcoming.html' style='padding-top: 30px'>
+
           <br><br>
 
           <p style="color:white;">Filter Events</p>
@@ -215,7 +302,7 @@
             <div class='tagrec' id='singing' onclick="searchTag(this.id)">singing</div>
             <div class='tagrec' id='lab' onclick="searchTag(this.id)">lab</div>
             </div>
-
+          
 
           <!-- <br><br><br><br> -->
 

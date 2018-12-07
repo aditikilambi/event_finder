@@ -37,6 +37,8 @@
       <!-- Load our form script file -->
       <script src="js/form.js"></script>
       <script src="js/event.js"></script>
+      <script src="js/login.js"></script>
+
 
 
 
@@ -44,7 +46,7 @@
 
       <div class = 'jumbotron' id='pageHeader'>
         <div id = "openNav" class='hide' onclick="openNav()"><i class="fa fa-search"></i></div>
-        <h1>EventFinder</h1>
+        <h1><img src='./images/logo.png'></h1>
         <h3 id ='searchEventsCover'>Search All Events</h3>
       </div>
 
@@ -52,13 +54,13 @@
 
 
       <div id="mySidenav" class="sidenav">
-        <p id="logout"><button><a href="./index.html">Logout</a></button></p>
+        <p id="logout" style='position: absolute; top: 0px; left: 140px;'><button><a href="./index.html" onclick='logout()' style='color: black;'>Logout</a></button></p>
 
         <div id='closeSearch'>
-          <p><a href="javascript:void(0)"  onclick="closeNav(); onClick();">&times;</a></p>
+          <p style='position: absolute; top: 10px; left: 190px'><a href="javascript:void(0)"  onclick="closeNav(); onClick();" style='color: black;'>&times;</a></p>
         </div>
 
-        <form id='searchbar' action='./upcoming.html'>
+        <form id='searchbar' action='./upcoming.html' style='padding-top: 30px'>
 
           <br><br>
 

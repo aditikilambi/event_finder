@@ -1,3 +1,6 @@
+editEvent.html
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
       <meta charset="utf-8">
@@ -34,29 +37,32 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
       <script src="./js/ckeditor.js"></script>
 
-    <script>
-      window.onload = function(){
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
-        var toRetrieve = JSON.parse(localStorage.getItem('editEvent'));
-        
-        document.getElementById('eventName').value = toRetrieve.name;
-        document.getElementById('date').value = toRetrieve.date;
-        document.getElementById('start-time').value = toRetrieve.startTime;
-        document.getElementById('end-time').value = toRetrieve.endTime;
-        document.getElementById('location').value = toRetrieve.location;
-        document.getElementById('description').value = toRetrieve.description;
-        document.getElementById('long-description').value = toRetrieve.longboi;
-        
-      }
-    </script>
 
+
+<!--       <script>
+        $( function() {
+          $( document ).tooltip();
+        } );
+      </script> -->
   </head>
 
   <body>
     <!-- Load our form script file -->
     <script src="js/form.js"></script>
     <script src="js/event.js"></script>
+    <script>
+        window.onload = populatePage();
+        window.onload = localStorage.setItem('eventedit', "false");
+        window.onbeforeunload = function() {
+          if(localStorage.getItem("eventedit") === "false") {
+            return "Are you sure you want to navigate away?";
+          }
+        }
 
+    </script>
 
 <!--     <script>
       $('#openNav').bind('beforeUnload', function(){
@@ -66,8 +72,8 @@
       <!--    Creating Page Header    -->
 
       <div class = 'jumbotron' id='pageHeader'>
-        <h1>EventFinder</h1>
-        <h3>Edit Event</h3>
+        <h1><img src='./images/logo.png'></h1>
+        <h3 id='toChange'>Edit Event</h3>
       </div>
 
       <!--  Making the My events, Upcoming, and create event tabs  -->
@@ -80,7 +86,7 @@
     <div id = 'form'>
 
 
-      <form id='addEventForm' action='./myEvents.html' >
+      <form id='editEventForm' action='./myEvents.html'>
 
 
 
@@ -106,7 +112,7 @@
         <label for='startTime'><span style="color: #FFCD00">*  </span>Event Time:</label>
         <div class='form-inline'>
           <label for="startTime" style='padding-right: 10px'>Start: </label>
-          <select id="startTime" style="width:60px;" class="form-control" required>
+          <select id="startTime" name='start' style="width:60px;" class="form-control" required>
             <option value="">Hour</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -123,7 +129,7 @@
           </select>
           <span>  :  </span>
 
-          <select id="startTime2" style="width:50px;" class="form-control" required>
+          <select id="startTime2" name='startmin' style="width:50px;" class="form-control" required>
             <option value="">Min</option>
             <option value="00">00</option>
             <option value="05">05</option>
@@ -139,7 +145,7 @@
             <option value="55">55</option>
           </select>
 
-          <select id="ampm1" style="width:80px;" class="form-control" required>
+          <select id="ampm1" name='startam'style="width:80px;" class="form-control" required>
             <option value="">AM/PM</option>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
@@ -150,7 +156,7 @@
 
           <label for="endTime" style='padding-right: 10px'>End: </label>
 
-          <select id="endTime" style="width:60px;" class="form-control" required>
+          <select id="endTime" name='end' style="width:60px;" class="form-control" required>
             <option value="">Hour</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -169,7 +175,7 @@
           <span>  :  </span>
 
 
-          <select id="endTime2" style="width:50px;" class="form-control" required>
+          <select id="endTime2" name='endmin' style="width:50px;" class="form-control" required>
             <option value="">Min</option>
             <option value="00">00</option>
             <option value="05">05</option>
@@ -185,7 +191,7 @@
             <option value="55">55</option>
           </select>
 
-          <select id="ampm2" style="width:80px;" class="form-control" required>
+          <select id="ampm2" name='endam' style="width:80px;" class="form-control" required>
             <option value="">AM/PM</option>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
@@ -213,7 +219,7 @@
       
       <div class='form-group'>
         <label for='eventType'><span style="color: #FFCD00">*  </span>Category: </label>
-        <select id="eventType" class="form-control form-control-lg">
+        <select id="eventType" name='type' class="form-control form-control-lg">
           <option value="">Event Category</option>
           <option value="art">Art</option>
           <option value="comedy">Comedy</option>
@@ -239,8 +245,8 @@
         <br>
 
         <div class='form-group'>
-          <label for='description'>Event Details:</label>
-          <textarea id="long-description"></textarea>
+          <label for='longdescription'>Event Details:</label>
+          <textarea id="longdescription"  class="form-control"></textarea>
         </div>
 
         <br>
@@ -271,16 +277,7 @@
          <p id = 'submit'><input type="submit" value="Edit Event"></p>
         </div>
       </form>
-      <script>
-        ClassicEditor
-        .create( document.querySelector( '#long-description' ), {
-          removePlugins: [ 'Heading'],
-          toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote', 'link']
-        } )
-        .catch( error => {
-            console.error( error );
-        } );
-      </script>
+
     </div>
 
   </body>

@@ -8,3 +8,7 @@ function logIn() {
 	window.alert("Incorrect username/password combination, try again");
 	return false;
 }
+
+function logout() {
+	localStorage.setItem('loggedout', true);
+}
